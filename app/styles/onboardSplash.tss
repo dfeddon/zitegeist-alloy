@@ -1,0 +1,42 @@
+"Button":
+{
+  font: {fontSize: 14, fontFamily: "Cabin-Regular"}
+}
+"Label":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"}
+}
+"TextField":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5
+}
+"#searchButton":
+{
+  font: {fontSize: 18, fontFamily: "American-Typewriter-Regular"},
+}
+"#createButton":
+{
+  font: {fontSize: 18, fontFamily: "American-Typewriter-Regular"},
+}
+"#interests":
+{
+	color:"white",
+	font: {fontSize: 26, fontFamily: "American-Typewriter-Regular"}
+}
+"#mainView": //#03a9f4 #ebebeb #2775aa
+{
+  backgroundGradient:
+  {
+    type: 'linear',
+    startPoint: { x: '50%', y: '0%' },
+    endPoint: { x: '50%', y: '100%' },
+    colors:
+    [
+      { color: '#3498DB', offset: 0.60 },
+      { color: '#2775aa', offset: 0.60 }
+    ],
+  }
+}

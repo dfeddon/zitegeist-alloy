@@ -1,0 +1,9 @@
+"TextField":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  backgroundColor: "white",
+  barColor: "white",
+  showCancel: false,
+  paddingLeft: 5,
+  paddingRight: 5
+}

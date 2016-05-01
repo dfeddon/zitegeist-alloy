@@ -1,0 +1,12 @@
+<Alloy>
+  <View id="container" backgroundColor="gray" width="100%" height="Ti.UI.SIZE" layout="vertical" backgroundColor="transparent">
+
+    <TextField id="textField" width="100%" height="50" backgroundColor="white" paddingLeft="15" paddingRight="15" autocapitalization="Ti.UI.TEXT_AUTOCAPITALIZATION_NONE" hintText=" eg: 'Star Wars' or 'Kubrick' or 'Dallas Cowboys'"></TextField>
+
+    <Require type="view" src="beaconCloud" id="beacons"/>
+
+    <TableView id="tableview" top="5" left="0" right="0" height="Ti.UI.SIZE">
+    </TableView>
+
+  </View>
+</Alloy>

@@ -1,0 +1,16 @@
+"Button":
+{
+  font: {fontSize: 14, fontFamily: "Cabin-Regular"}
+}
+"Label":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  color: "white"
+}
+"TextField":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5
+}

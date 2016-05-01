@@ -1,0 +1,25 @@
+"#rewardcredits":
+{
+  color:"white",
+	font: {fontSize: 11, fontFamily: "Cabin-Bold"}
+}
+"#displayName":
+{
+  color:"black",
+	font: {fontSize: 16, fontFamily: "Cabin-Bold"}
+}
+"#username":
+{
+  color:"gray",
+	font: {fontSize: 14, fontFamily: "Cabin-Regular"}
+}
+"#percent":
+{
+  color: "black",
+  font: {fontSize: 12, fontFamily: "Cabin-Regular"}
+}
+"#percentSymbol":
+{
+  color: "black",
+  font: {fontSize: 10, fontFamily: "LeagueGothic-Regular"}
+}

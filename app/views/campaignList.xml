@@ -1,0 +1,23 @@
+<Alloy>
+  <!-- <Collection src="campaigns"/> -->
+  <View id="container" backgroundColor="transparent">
+    <TableView id="tableView" width="100%" height="100%" backgroundColor="transparent" separatorStyle="Ti.UI.iPhone.ListViewSeparatorStyle.NONE">
+      <!-- <Require src="campaignListRow"/> -->
+      <!-- <TableViewRow backgroundColor="transparent">
+        <View width="100%" top="10" bottom="10" height="Ti.UI.SIZE" backgroundColor="#ebe1e4" borderRadius="15" borderWidth="5" borderColor="#ebe1e4">
+          <ImageView top="10" left="10" width="50" height="50" image="/images/matt-bloom-circle.png"></ImageView>
+          <View top="10" layout="horizontal" height="Ti.UI.SIZE">
+            <Label left="75" color="black" wordWrap="false">Celebration HOA</Label>
+            <Label left="5" color="gray" wordWrap="false">@celehoa</Label>
+            <View left="5" height="Ti.UI.SIZE">
+              <ImageView right="15" width="30" top="0" height="35" image="/images/reward-creds.png"></ImageView>
+              <Label id="rewardcredits" right="6" width="30" top="4">25</Label>
+            </View>
+          </View>
+          <Label left="75" right="15" top="40">Are you planning to vote in next month's CROA election? Let us know!\n</Label>
+        </View>
+      </TableViewRow> -->
+
+    </TableView>
+  </View>
+</Alloy>

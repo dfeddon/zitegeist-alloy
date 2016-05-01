@@ -1,0 +1,20 @@
+"Button":
+{
+  font: {fontSize: 16, fontFamily: "Cabin-Bold"}
+}
+"Label":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"}
+}
+"TextField":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5
+}
+"#interests":
+{
+	color:"white",
+	font: {fontSize: 26, fontFamily: "Cabin-Bold"}
+}

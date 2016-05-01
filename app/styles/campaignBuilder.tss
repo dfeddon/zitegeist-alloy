@@ -1,0 +1,38 @@
+"Button":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  color: "yellow"
+}
+"Label":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  color: "white"
+}
+"TextField":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  //backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5
+}
+"TextArea":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  //backgroundColor: "black",
+  color: "white",
+  paddingLeft: 5,
+  paddingRight: 5
+}
+"#headerLbl":
+{
+  backgroundColor: "white",
+  color: "black"
+}
+"#questionBtn":
+{
+  left: 10,
+  width: 50,//Ti.UI.SIZE,
+  height: 40,
+  backgroundColor: "#2C3E50",
+  color: "white"
+}

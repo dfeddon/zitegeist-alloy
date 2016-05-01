@@ -1,0 +1,38 @@
+"Button":
+{
+  font: {fontSize: 14, fontFamily: "Cabin-Regular"}
+}
+"Label":
+{
+  font: {fontSize: 14, fontFamily: "Cabin-Regular"},
+  color: "gray"
+}
+"TextField":
+{
+  font: {fontSize: 14, fontFamily: "Cabin-Regular"},
+  backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5,
+  height: 40,
+  autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE
+}
+"#container":
+{
+  backgroundColor: "#03a9f4"
+}
+
+"#registration":
+{
+  font: {fontSize: 14, fontFamily: "Cabin-Regular"}
+}
+
+"#signinBtn":
+{
+  color: "white",
+  backgroundGradient:
+  {
+    type:'linear',
+    colors:[{color:'#4A97F6', position:0.0}, {color:'#1F6CE5', position:1.0}],
+    backFillStart: false
+  }
+}

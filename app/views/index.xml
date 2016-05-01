@@ -1,0 +1,7 @@
+<Alloy>
+	<Window class="container" onOpen="openHandler">
+		<View id="contentWrapper" top="20" zIndex="100" backgroundColor="transparent">
+			<!-- <Require type="view" src="splashMenu" id="splash"/> -->
+		</View>
+	</Window>
+</Alloy>

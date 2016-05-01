@@ -1,0 +1,28 @@
+"Button":
+{
+  font: {fontSize: 16, fontFamily: "Cabin-Bold"}
+}
+"TextField":
+{
+  left: 5,
+  borderRadius: 5,
+  borderColor: "white",
+  backgroundColor: "white",
+  color: "#03a9f4",
+  paddingLeft: 5,
+  paddingRight: 5,
+  editable: false,
+  font: {fontSize: 14, fontFamily: "Cabin-Italic"}// "LeagueGothic-Regular"}
+}
+/*"TextField":
+{
+  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5
+}*/
+"#interests":
+{
+	color:"white",
+	font: {fontSize: 26, fontFamily: "Cabin-Bold"}
+}

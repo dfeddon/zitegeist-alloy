@@ -1,0 +1,71 @@
+<Alloy>
+  <ScrollView id="scrollView" layout="vertical" left="15" right="15" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" top="0" bottom="0" backgroundColor="#2775aa">
+
+  <View layout="vertical" top="10" left="15" right="15" height="Ti.UI.SIZE" backgroundColor="transparent" onPostlayout="postLayoutHandler">
+
+    <!-- Teaser -->
+    <View id="teaser" layout="vertical" height="Ti.UI.SIZE">
+      <Label top="10" left="0">TEASER</Label>
+      <TextArea top="10" left="0" right="0" height="100"></TextArea>
+    </View>
+
+    <!-- Options -->
+    <View id="options" top="15" layout="vertical" width="100%" height="Ti.UI.SIZE">
+      <Label top="10" left="0">OPTIONS</Label>
+      <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+        <Switch left="10" value="false"></Switch>
+        <Label left="10">Include Media?</Label>
+        <ImageView left="50" width="50" height="50"></ImageView>
+      </View>
+      <View id="privatize" top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE" isAdvanced="true">
+        <Switch left="10" value="false"></Switch>
+        <Label left="10">Privatize Results?</Label>
+      </View>
+    </View>
+
+    <!-- Schedule -->
+    <View id="schedule" isAdvanced="true" top="15" layout="vertical" width="100%" height="Ti.UI.SIZE">
+      <Label top="10" left="0">SCHEDULE</Label>
+    </View>
+
+    <!-- Audience -->
+    <View id="audience" top="15" layout="vertical" width="100%" height="Ti.UI.SIZE">
+      <Label top="10" left="0">AUDIENCE</Label>
+    </View>
+
+    <!-- Reach -->
+    <View id="reach" isAdvanced="true" top="15" layout="vertical" width="100%" height="Ti.UI.SIZE">
+      <Label top="10" left="0">REACH</Label>
+    </View>
+
+    <!-- Featured -->
+    <View id="featured" isAdvanced="true" top="15" layout="vertical" width="100%" height="Ti.UI.SIZE">
+      <Label top="10" left="0">FEATURED</Label>
+    </View>
+
+    <!-- Demographics -->
+    <View id="demographics" isAdvanced="true" top="15" layout="vertical" width="100%" height="Ti.UI.SIZE">
+      <Label top="10" left="0">DEMOGRAPHICS</Label>
+    </View>
+
+    <!-- Rewards -->
+    <View id="rewards" isAdvanced="true" top="15" layout="vertical" width="100%" height="Ti.UI.SIZE">
+      <Label top="10" left="0">REWARDS</Label>
+    </View>
+
+    <!-- Metrics -->
+    <View id="metrics" top="15" layout="vertical" width="100%" height="Ti.UI.SIZE">
+      <Label top="10" left="0">METRICS</Label>
+      <View id="metricTabs" top="15" height="50" width="100%" layout="horizontal">
+        <Button id="questionBtn">1</Button>
+        <Button id="questionBtn">2</Button>
+      </View>
+      <View id="questionView" width="100%" height="Ti.UI.SIZE">
+        <Require type="view" src="metricBuilder" id="metricBuilderView"/>
+      </View>
+    </View>
+
+  </View>
+
+</ScrollView>
+</Alloy>
