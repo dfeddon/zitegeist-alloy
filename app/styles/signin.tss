@@ -1,15 +1,15 @@
 "Button":
 {
-  font: {fontSize: 14, fontFamily: "Cabin-Regular"}
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"}
 }
 "Label":
 {
-  font: {fontSize: 14, fontFamily: "Cabin-Regular"},
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
   color: "gray"
 }
 "TextField":
 {
-  font: {fontSize: 14, fontFamily: "Cabin-Regular"},
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
   backgroundColor: "white",
   paddingLeft: 5,
   paddingRight: 5,
@@ -23,7 +23,7 @@
 
 "#registration":
 {
-  font: {fontSize: 14, fontFamily: "Cabin-Regular"}
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"}
 }
 
 "#signinBtn":

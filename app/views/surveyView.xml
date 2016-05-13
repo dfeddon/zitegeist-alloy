@@ -1,0 +1,36 @@
+<Alloy>
+  <View top="0" id="container" layout="vertical" height="100%" onPostlayout="postLayoutHandler" bubbleParent="true" backgroundColor="white">
+
+    <View id="headerView" top="0" width="100%" layout="vertical" height="Ti.UI.SIZE" backgroundColor="#d7daff">
+
+      <View id="countersView" width="100%" layout="horizontal" height="Ti.UI.SIZE">
+        <Label id="campaignSubheader" width="40%" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="Gears of war" color="gray"></Label>
+        <Label id="counterSubheader" width="20%" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="2 of 6" color="black"></Label>
+        <Label id="brandSubheader" width="40%" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="Epic Games" color="gray"></Label>
+      </View>
+
+      <View id="navigationView" tintColor="black" top="10" width="100%" height="Ti.UI.SIZE">
+        <Button id="backButton" left="10" width="30" height="30" image="/images/survey-nav-back.png"></Button>
+        <Label id="teaserText" left=50 right="50" text="Hardcore for Gears of War?" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" color="black"></Label>
+        <Button id="forwardButton" right="10" width="30" height="30" image="/images/survey-nav-forward.png"></Button>
+      </View>
+
+      <View id="scheduleView" top="5" width="100%" height="Ti.UI.SIZE">
+        <Label id="scheduleText" width="100%" text="" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" color="black"></Label>
+      </View>
+
+    </View>
+
+    <View id="questionView" backgroundColor="black" layout="vertical" top="0" width="100%" height="Ti.UI.SIZE">
+      <View height="10"></View>
+      <Label id="questionText" width="80%" text="What was your level of enjoyment while playing Gears of War today?" textAlign="Ti.UI.TEXT_ALIGNMENT_LEFT"></Label>
+      <View height="10"></View>
+    </View>
+
+    <View id="metricsView" layout="vertical" top="0" left="0" right="0" width="100%" height="100%">
+      <TableView id="tableView" width="100%" height="100%" backgroundColor="transparent" separatorStyle="Ti.UI.iPhone.ListViewSeparatorStyle.NONE" bubbleParent="true">
+      </TableView>
+    </View>
+
+  </View>
+</Alloy>

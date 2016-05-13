@@ -4,11 +4,11 @@
 }
 "Label":
 {
-  font: {fontSize: 18, fontFamily: "Cabin-Regular"}
+  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"}
 }
 "TextField":
 {
-  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
   backgroundColor: "white",
   paddingLeft: 5,
   paddingRight: 5

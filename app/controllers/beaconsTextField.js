@@ -1,5 +1,5 @@
 var ApiService = require("api.services");
-var config = require("config");
+var config = require("singleton-config");
 
 var lastdata = [];
 var beaconsSelected = [];

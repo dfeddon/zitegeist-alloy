@@ -1,6 +1,6 @@
 "Button":
 {
-  font: {fontSize: 16, fontFamily: "Cabin-Bold"}
+  font: {fontSize: 14, fontFamily: "Cabin-Bold"}
 }
 "TextField":
 {
@@ -16,7 +16,7 @@
 }
 /*"TextField":
 {
-  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
   backgroundColor: "white",
   paddingLeft: 5,
   paddingRight: 5

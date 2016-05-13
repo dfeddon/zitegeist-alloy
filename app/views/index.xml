@@ -1,7 +1,69 @@
 <Alloy>
 	<Window class="container" onOpen="openHandler">
-		<View id="contentWrapper" top="20" zIndex="100" backgroundColor="transparent">
-			<!-- <Require type="view" src="splashMenu" id="splash"/> -->
+
+		<!-- navigation bar -->
+		<View id="navigationBar" top="0" height="0" visible="false" backgroundColor="#2775aa" bubbleParent="true" layout="horizontal">
+
+			<View width="Ti.UI.FILL" layout="horizontal">
+
+				<!-- left -->
+				<View id="navLeft" width="33%" tintColor="white">
+					<Button id="menuButton" width="20" height="20" left="15" image="/images/menu-icon.png"></Button>
+					<Button id="backButton" color="white" title="< Campaigns" onClick="backClickHandler"></Button>
+				</View>
+
+				<!-- mid -->
+				<View id="navMid" width="33%">
+					<Label id="headerText" top="10" left="30%" text="Campaigns" color="white"></Label>
+				</View>
+
+				<!-- right -->
+				<View id="navRight" width="33%" tintColor="white">
+					<Button id="createCampaignButton" right="15" width="20" height="20" image="/images/add-campaign.png" onClick="createCampaignHandler"></Button>
+				</View>
+
+			</View>
+
 		</View>
+
+		<!-- content -->
+		<View id="contentWrapper" top="20" backgroundColor="transparent" bubbleParent="true">
+		</View>
+
+		<!-- content -->
+		<View id="contentModal" top="20" backgroundColor="transparent" bubbleParent="true" visible="false">
+		</View>
+
+		<!-- footer -->
+		<View id="footerBar" bottom="0" height="0" width="100%" visible="false" backgroundColor="#bababb" bubbleParent="true" layout="horizontal">
+
+			<ImageView id="userImage" width="30" height="30" top="5" left="5" image="/images/matt-bloom-circle.png"></ImageView>
+
+			<View id="creditsView" left="20%" width="100" layout="vertical">
+				<Label id="creditsHeader" width="100" top="2" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="Credits" color="#716e71"></Label>
+				<!-- <View borderColor="aqua" width="Ti.UI.FILL"> -->
+					<!-- <View borderColor="pink" layout="horizontal" top="0" width="Ti.UI.SIZE"> -->
+						<!-- <ImageView width="15" height="15" image="/images/zitegeist-credits.png"></ImageView> -->
+						<Label id="creditsText" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="1,550" color="black"></Label>
+					<!-- </View> -->
+				<!-- </View> -->
+			</View>
+
+			<View id="zitegeistView" left="5%" width="100" layout="vertical">
+				<Label id="zitegeistHeader" width="75" top="2" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="Zitegeist" color="#716e71"></Label>
+				<Label id="zitegeistText" width="75" top="0" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="204" color="black"></Label>
+			</View>
+
+		</View>
+
+		<!-- footer alerts -->
+		<View id="footerAlert" bottom="-100" height="100" width="100%" backgroundColor="#2C3E50" layout="vertical">
+			<Label id="footerLabel" width="100%" height="50" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="Remove beacon 'star wars'?"></Label>
+			<View width="100%" layout="horizontal">
+				<Button id="yes" width="50%" onClick="alertHandler">YES</Button>
+				<Button id="no" width="50%" onClick="alertHandler">NO</Button>
+			</View>
+		</View>
+
 	</Window>
 </Alloy>

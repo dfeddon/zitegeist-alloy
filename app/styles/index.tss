@@ -1,15 +1,51 @@
-".container": {
-	backgroundColor:"white"
+".container":
+{
+	backgroundColor:"#bababb"
 }
 
-"Label": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "#000"
+"Button":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "yellow"
 }
-
-"#label": {
-	font: {
-		fontSize: 12
-	}
+"Label":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "white"
+}
+"TextField":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+}
+"#menuButton":
+{
+}
+"#headerText":
+{
+  font: {fontSize: 18, fontFamily: "LeagueGothic-Regular"},
+}
+"#creditsHeader":
+{
+  font: {fontSize: 14, fontFamily: "LeagueGothic-Regular"},
+}
+"#creditsText":
+{
+  font: {fontSize: 16, fontFamily: "LeagueGothic-Regular"},
+  //backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5
+}
+"#zitegeistHeader":
+{
+  font: {fontSize: 14, fontFamily: "LeagueGothic-Regular"},
+  //backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5
+}
+"#zitegeistText":
+{
+  font: {fontSize: 16, fontFamily: "LeagueGothic-Regular"},
+  //backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5
 }

@@ -10,15 +10,17 @@ function advancedToggle(bool)
   {
     _.each($.scrollView.children, function(child)
     {
-      //Ti.API.info('child', child);
+      Ti.API.info('child', child);
+      if (child.isAdvanced && child.isAdvanced === true)
+        hideAdvanced(child);
       _.each(child.children, function(subchild)
       {
-        //Ti.API.info('subchild', subchild);
+        Ti.API.info('subchild', subchild);
         if (subchild.isAdvanced && subchild.isAdvanced === true)
           hideAdvanced(subchild);
         _.each(subchild.children, function(subchild2)
         {
-          //Ti.API.info('subchild2', subchild2);
+          Ti.API.info('subchild2', subchild2);
           if (subchild2.isAdvanced && subchild2.isAdvanced === true)
             hideAdvanced(subchild2);
         });
@@ -35,6 +37,7 @@ function hideAdvanced(view)
   view.hide();
   //view.parent.remove(view);
   //view = null;
+  view.top = undefined;
   view.height = 0;
   view.width = 0;
 }

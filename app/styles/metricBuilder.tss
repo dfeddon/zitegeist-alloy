@@ -1,15 +1,15 @@
 "Button":
 {
-  font: {fontSize: 14, fontFamily: "Cabin-Regular"}
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"}
 }
 "Label":
 {
-  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
   color: "white"
 }
 "TextField":
 {
-  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
   backgroundColor: "white",
   paddingLeft: 5,
   paddingRight: 5

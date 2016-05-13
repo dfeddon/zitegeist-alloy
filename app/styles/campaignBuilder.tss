@@ -1,23 +1,23 @@
 "Button":
 {
-  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
   color: "yellow"
 }
 "Label":
 {
-  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
   color: "white"
 }
 "TextField":
 {
-  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
   //backgroundColor: "white",
   paddingLeft: 5,
   paddingRight: 5
 }
 "TextArea":
 {
-  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
   //backgroundColor: "black",
   color: "white",
   paddingLeft: 5,

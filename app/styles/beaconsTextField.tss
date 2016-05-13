@@ -1,6 +1,6 @@
 "TextField":
 {
-  font: {fontSize: 18, fontFamily: "Cabin-Regular"},
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
   backgroundColor: "white",
   barColor: "white",
   showCancel: false,

@@ -1,4 +1,4 @@
-var config = require("config");
+var config = require("singleton-config");
 //var Crypto = require("platform-titanium/core/node_modules/cryptojs/cryptojs").Crypto;
     ////////////////////////////
     // api wrapper
@@ -237,7 +237,7 @@ ApiService.prototype.doEncrypt = function(obj, callback)
                     // force all parameters to string values
                     obj[k] = obj[k].toString();
                     // encrypt
-                obj[k] = Crypto.AES.encrypt(obj[k], "Password1",{ mode: new Crypto.mode.CBC(Crypto.pad.ZeroPadding) });
+                //obj[k] = Crypto.AES.encrypt(obj[k], "Password1",{ mode: new Crypto.mode.CBC(Crypto.pad.ZeroPadding) });
                 Ti.API.info(k, obj[k]);
             }
         }
@@ -264,7 +264,7 @@ ApiService.prototype.eachRecursive = function(obj, encryptBool, callback)
                 // encrypt
                 if (encryptBool == true)
                 {
-                        obj2[k] = Crypto.AES.encrypt(obj2[k], "Password1",{ mode: new Crypto.mode.CBC(Crypto.pad.ZeroPadding) });
+                        //obj2[k] = Crypto.AES.encrypt(obj2[k], "Password1",{ mode: new Crypto.mode.CBC(Crypto.pad.ZeroPadding) });
                 }
                 // decrypt
                 else
@@ -274,12 +274,12 @@ ApiService.prototype.eachRecursive = function(obj, encryptBool, callback)
                         else
                         {
                             //Ti.API.info("pre decrypt", k, obj2[k]);
-                            obj2[k] = Crypto.AES.decrypt(obj2[k], "Password1", { mode: new Crypto.mode.CBC(Crypto.pad.ZeroPadding) });
+                            //obj2[k] = Crypto.AES.decrypt(obj2[k], "Password1", { mode: new Crypto.mode.CBC(Crypto.pad.ZeroPadding) });
                             //trimming space from right side of the string (only on url parameters)
                             //if (k == "url" || k == "picture" || k == "email" || k == "userid" || k == "id")
                             //{
                                 //Ti.API.info("rtrim", k, obj2[k]);
-                                obj2[k] = rtrim(obj2[k], '\0');
+                                //obj2[k] = rtrim(obj2[k], '\0');
                                 //Ti.API.info(obj2[k]);
                             //}
                         }

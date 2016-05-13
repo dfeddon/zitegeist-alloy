@@ -1,0 +1,19 @@
+".container":
+{
+	backgroundColor:"#bababb"
+}
+
+"Button":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "yellow"
+}
+"Label":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "black"
+}
+"TextField":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+}

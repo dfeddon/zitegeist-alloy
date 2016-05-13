@@ -1,0 +1,29 @@
+".container":
+{
+	backgroundColor:"#bababb"
+}
+
+"Button":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "yellow"
+}
+"Label":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "white"
+}
+"TextField":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+}
+"#standardButton":
+{
+  font: {fontSize: 18, fontFamily: "LeagueGothic-Regular"},
+  color: "white"
+}
+"#advancedButton":
+{
+  font: {fontSize: 18, fontFamily: "LeagueGothic-Regular"},
+  color: "white"
+}

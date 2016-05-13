@@ -1,22 +1,27 @@
 "#rewardcredits":
 {
   color:"white",
-	font: {fontSize: 11, fontFamily: "Cabin-Bold"}
+	font: {fontSize: 10, fontFamily: "SFUIDisplay-Semibold"}
 }
 "#displayName":
 {
   color:"black",
-	font: {fontSize: 16, fontFamily: "Cabin-Bold"}
+	font: {fontSize: 14, fontFamily: "SFUIDisplay-Semibold"}
 }
 "#username":
 {
   color:"gray",
-	font: {fontSize: 14, fontFamily: "Cabin-Regular"}
+	font: {fontSize: 12, fontFamily: "SFUIDisplay-Light"}
+}
+"#teaser":
+{
+  color:"black",
+	font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"}
 }
 "#percent":
 {
   color: "black",
-  font: {fontSize: 12, fontFamily: "Cabin-Regular"}
+  font: {fontSize: 10, fontFamily: "SFUIDisplay-Light"}
 }
 "#percentSymbol":
 {

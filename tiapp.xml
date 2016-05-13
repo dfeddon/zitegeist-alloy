@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app 
+<ti:app
   xmlns:ti="http://ti.appcelerator.org">
   <id>com.zitegeist</id>
   <name>Zitegeist</name>
@@ -40,7 +40,7 @@
       </dict>
     </plist>
   </ios>
-  <android 
+  <android
     xmlns:android="http://schemas.android.com/apk/res/android">
   </android>
   <mobileweb>
@@ -63,7 +63,7 @@
   </deployment-targets>
   <sdk-version>5.2.2.GA</sdk-version>
   <plugins>
-    <plugin version="1.0">ti.alloy</plugin>
+    <plugin version="1.9.0">ti.alloy</plugin>
   </plugins>
   <property name="appc-app-id" type="string">571f7f752ab5d3ef30845f48</property>
   <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>

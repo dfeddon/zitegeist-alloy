@@ -1,0 +1,26 @@
+".container": {
+	backgroundColor:"white"
+}
+
+"Button":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "yellow"
+}
+"Label":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "white"
+}
+"TextField":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  //backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5
+}
+"#joinButton":
+{
+  font: {fontSize: 16, fontFamily: "LeagueGothic-Regular"},
+  color: "white",
+}

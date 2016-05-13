@@ -1,0 +1,41 @@
+".container":
+{
+	backgroundColor:"#bababb"
+}
+
+"Button":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "yellow"
+}
+"Label":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "white"
+}
+"TextField":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+}
+"#campaignSubheader":
+{
+  font: {fontSize: 10, fontFamily: "SFUIDisplay-Light"},
+}
+"#brandSubheader":
+{
+  font: {fontSize: 10, fontFamily: "SFUIDisplay-Light"},
+}
+"#scheduleText":
+{
+  font: {fontSize: 10, fontFamily: "SFUIDisplay-Light"},
+}
+"#teaserText":
+{
+  color: "#e3e6e3",
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Ultralight"},
+}
+"#questionText":
+{
+  color: "#e3e6e3",
+  font: {fontSize: 22, fontFamily: "LeagueGothic-Regular"},
+}

@@ -14,6 +14,8 @@ exports.addBeaconToCloud = function(beacon)
     height: Ti.UI.SIZE
   });
 
+  textView.addEventListener("click", beaconClickHandler);
+
   var text = $.UI.create('TextField',
   {
     value: beacon.name,
@@ -25,5 +27,14 @@ exports.addBeaconToCloud = function(beacon)
   Ti.API.info(':', text, textView, $.view.children.length);
 
   // dispatch beacon change event
-  $.view.fireEvent("beaconChangeEvent", {beacon: beacon});
+  $.view.fireEvent("beaconAddEvent", {beacon: beacon});
 };
+
+function beaconClickHandler(e)
+{
+  Ti.API.info('beacon clicked', e.source.value);
+  Ti.API.info('parent', e.source.parent);
+
+  // initiate a bottom-based menu to delete the beacon
+  $.view.fireEvent("beaconClickEvent", {name:e.source.value, view:e.source.parent});
+}

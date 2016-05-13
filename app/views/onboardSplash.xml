@@ -1,32 +1,32 @@
 <Alloy>
-  <View id="container" top="0" width="100%" height="100%" backgroundColor="transparent">
+  <View id="container" top="0" width="100%" bottom="0" backgroundColor="transparent">
     <!-- <View top="66%" left="0" right="0" backgroundColor="white" zIndex="1"/> -->
 
-    <View id="mainView" layout="vertical" width="100%" top="0" height="100%" >
+    <View id="mainView" width="100%" top="0" bottom="0" >
 
       <!-- user buttons -->
       <View top="10" height="Ti.UI.SIZE" width="100%">
         <ImageView id="logo" left="15" width="50" height="50" image="/images/zitegeist-logo-z.png"></ImageView>
-        <Button id="signinBtn" left="50%" color="white" onClick="signin">SIGN IN</Button>
+        <Button id="signinBtn" left="40%" color="white" onClick="signin">SIGN IN</Button>
         <Button id="registerBtn" right="15" color="black" backgroundColor="white" width="100" onClick="register">REGISTER</Button>
       </View>
 
-      <View layout="vertical" top="15%" height="Ti.UI.SIZE" >
+      <View layout="vertical" top="15%" height="85%">
 
         <!-- splash header -->
         <Label id="interests">What are you interested in?</Label>
 
         <!-- question or answer -->
         <View left="15" right="15" top="15" height="Ti.UI.SIZE" backgroundColor="#eee" layout="horizontal">
-          <Button id="searchButton" color="black" width="50%" height="50" onClick="searchButtonHandler">Questions</Button>
-          <Button id="createButton" color="black" width="50%" height="50" onClick="createButtonHandler">Answers</Button>
+          <Button id="searchButton" color="black" width="50%" height="40" onClick="searchButtonHandler">Questions</Button>
+          <Button id="createButton" color="black" width="50%" height="40" onClick="createButtonHandler">Answers</Button>
         </View>
 
         <!-- selector -->
         <View id="selector" left="15" width="50%" height="2" backgroundColor="orange"></View>
 
         <!-- questions view -->
-        <View id="questionsView" visible="true" left="0" right="0" top="0" layout="vertical" width="Ti.UI.SIZE" height="Ti.UI.SIZE" backgroundColor="transparent">
+        <View id="questionsView" visible="true" left="0" right="0" top="0" layout="vertical" bottom="0" backgroundColor="transparent">
 
           <!-- beacons textfield -->
           <View left="15" right="15" top="0" width="Ti.UI.SIZE" height="Ti.UI.SIZE">
@@ -34,17 +34,16 @@
           </View>
 
           <!-- campaigns list view -->
-          <View left="15" right="15" top="5" width="Ti.UI.SIZE" height="Ti.UI.SIZE" backgroundColor="transparent">
+          <View left="15" right="15" top="5" width="Ti.UI.SIZE" bottom="0" backgroundColor="transparent">
             <Require type="view" src="campaignList" id="campaignListView"/>
           </View>
 
         </View>
 
         <!-- answers view -->
-        <View id="answersView" visible="false" left="0" right="0" top="0" width="Ti.UI.SIZE" height="100%" backgroundColor="transparent">
+        <View id="answersView" visible="false" left="0" right="0" top="0" width="Ti.UI.SIZE" bottom="0" backgroundColor="transparent">
           <!-- <View top="0" left="15" right="15" height="2" backgroundColor="white">
           </View> -->
-
           <Require type="view" src="campaignBuilder" id="campaignBuilderView"/>
         </View>
 

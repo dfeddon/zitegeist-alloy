@@ -1,23 +1,24 @@
 <Alloy>
   <TableViewRow id="rowView" backgroundColor="transparent">
-    <View width="100%" top="10" bottom="10" height="Ti.UI.SIZE" backgroundColor="#fff" borderRadius="15" borderWidth="5" borderColor="#fff">
+    <View id="container" width="100%" top="1" bottom="1" height="Ti.UI.SIZE" backgroundColor="#fff" borderRadius="0" borderWidth="5" borderColor="#fff" onClick="clickHandler">
       <!-- User Pic -->
-      <ImageView top="10" left="10" width="50" height="50" image="/images/matt-bloom-circle.png"></ImageView>
+      <!-- forced zIndex allows profile clicks to take precedence over campaign click -->
+      <ImageView zIndex="100" top="10" left="10" width="50" height="50" image="/images/matt-bloom-circle.png" onClick="profileClickHandler"></ImageView>
       <!-- Top Bar -->
-      <View top="10" layout="horizontal" height="Ti.UI.SIZE">
+      <View top="5" layout="horizontal" height="Ti.UI.SIZE">
         <!-- Display Name -->
-        <Label id="displayName" left="75" color="black" wordWrap="false">Celebration HOA</Label>
-        <!-- Username -->
-        <Label id="username" left="5" wordWrap="false">@celehoa</Label>
+        <Label id="displayName" left="75" width="100" color="black" ellipsize="true" wordWrap="false">Celebration HOA</Label>
         <!-- Indicators -->
         <View left="5" height="Ti.UI.SIZE">
           <!-- Rewards -->
-          <ImageView right="15" width="30" top="0" height="35" image="/images/reward-creds.png"></ImageView>
+          <ImageView right="15" top="0" width="30" height="35" image="/images/reward-creds.png"></ImageView>
           <Label id="rewardcredits" right="5" width="30" top="5">25</Label>
         </View>
       </View>
+      <!-- Username -->
+      <Label id="username" top="30" left="75" width="100" wordWrap="false" horizontalWrap="false" lines="1" maxLines="1" ellipsize="true" text="@celehoa"></Label>
       <!-- Teaser -->
-      <View left="75" top="40" height="Ti.UI.SIZE">
+      <View left="75" top="50" height="Ti.UI.SIZE">
         <Label id="teaser" left="0" right="15" top="0">Are you planning to vote in next month's CROA election? Let us know which candidate has your vote!</Label>
       </View>
       <!-- Tally -->

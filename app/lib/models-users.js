@@ -26,6 +26,8 @@ Users.prototype.setter = function(obj)
         this[prop] = obj[prop];
     }
     Ti.API.info("Users setter", this);
+
+    return this;
 };
 
 Users.prototype.getter = function()
