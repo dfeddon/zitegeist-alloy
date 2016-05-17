@@ -37,7 +37,7 @@
 		<!-- footer -->
 		<View id="footerBar" bottom="0" height="0" width="100%" visible="false" backgroundColor="#bababb" bubbleParent="true" layout="horizontal">
 
-			<ImageView id="userImage" width="30" height="30" top="5" left="5" image="/images/matt-bloom-circle.png"></ImageView>
+			<ImageView id="userImage" width="30" height="30" top="5" left="5" image="/images/matt-bloom-circle.png" onTouchend="myProfileTouchEndHandler"></ImageView>
 
 			<View id="creditsView" left="20%" width="100" layout="vertical">
 				<Label id="creditsHeader" width="100" top="2" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="Credits" color="#716e71"></Label>
@@ -58,11 +58,14 @@
 
 		<!-- footer alerts -->
 		<View id="footerAlert" bottom="-100" height="100" width="100%" backgroundColor="#2C3E50" layout="vertical">
+
 			<Label id="footerLabel" width="100%" height="50" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="Remove beacon 'star wars'?"></Label>
+
 			<View width="100%" layout="horizontal">
 				<Button id="yes" width="50%" onClick="alertHandler">YES</Button>
 				<Button id="no" width="50%" onClick="alertHandler">NO</Button>
 			</View>
+
 		</View>
 
 	</Window>

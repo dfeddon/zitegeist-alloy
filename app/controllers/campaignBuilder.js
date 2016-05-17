@@ -1,11 +1,24 @@
+var toggleBoolean = false;
+
 function postLayoutHandler(e)
 {
   Ti.API.info('campaignBuilderHandler');
-  advancedToggle(false);
+  //advancedToggle(false);
 }
+
+exports.advancedToggleBool = function(bool)
+{
+  Ti.API.info('advancedToggleBool', bool);
+  if (bool == null) bool = false;
+
+  advancedToggle(bool);
+};
 
 function advancedToggle(bool)
 {
+  Ti.API.info('advancedToggle', bool);
+  if (bool == null) bool = false;
+
   if (bool === false)
   {
     _.each($.scrollView.children, function(child)
@@ -37,7 +50,8 @@ function hideAdvanced(view)
   view.hide();
   //view.parent.remove(view);
   //view = null;
-  view.top = undefined;
+
+  /*view.top = undefined;
   view.height = 0;
-  view.width = 0;
+  view.width = 0;*/
 }

@@ -23,12 +23,14 @@
 
     <View id="questionView" backgroundColor="black" layout="vertical" top="0" width="100%" height="Ti.UI.SIZE">
       <View height="10"></View>
+      <!-- Question -->
       <Label id="questionText" width="80%" text="What was your level of enjoyment while playing Gears of War today?" textAlign="Ti.UI.TEXT_ALIGNMENT_LEFT"></Label>
+      <!-- Spacer -->
       <View height="10"></View>
     </View>
 
-    <View id="metricsView" layout="vertical" top="0" left="0" right="0" width="100%" height="100%">
-      <TableView id="tableView" width="100%" height="100%" backgroundColor="transparent" separatorStyle="Ti.UI.iPhone.ListViewSeparatorStyle.NONE" bubbleParent="true">
+    <View id="metricsView" layout="vertical" top="0" left="0" right="0" width="100%" bottom="0" onPostlayout="tableViewCreated">
+      <TableView id="tableView" width="100%" height="Ti.UI.FILL" backgroundColor="transparent" separatorStyle="Ti.UI.iPhone.ListViewSeparatorStyle.NONE" bubbleParent="true">
       </TableView>
     </View>
 

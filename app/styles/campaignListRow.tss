@@ -21,10 +21,10 @@
 "#percent":
 {
   color: "black",
-  font: {fontSize: 10, fontFamily: "SFUIDisplay-Light"}
+  font: {fontSize: 10, fontFamily: "SFUIDisplay-Regular"}
 }
-"#percentSymbol":
+/*"#percentSymbol":
 {
   color: "black",
   font: {fontSize: 10, fontFamily: "LeagueGothic-Regular"}
-}
+}*/

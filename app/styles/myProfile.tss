@@ -1,5 +1,4 @@
-".index":
-{
+".container": {
 	backgroundColor:"white"
 }
 
@@ -11,9 +10,17 @@
 "Label":
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
-  color: "black"
+  color: "white"
 }
 "TextField":
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  //backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5
+}
+"#joinButton":
+{
+  font: {fontSize: 16, fontFamily: "LeagueGothic-Regular"},
+  color: "white",
 }

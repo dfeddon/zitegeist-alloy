@@ -1,11 +1,11 @@
 <Alloy>
-  <TableViewRow id="rowView" backgroundColor="transparent">
-    <View id="container" width="100%" top="0" height="Ti.UI.SIZE" backgroundColor="#fff" borderRadius="0" borderWidth="5" borderColor="#fff" onClick="clickHandler">
+  <TableViewRow id="rowView" class="index" selectionStyle="NONE" bubbleParent="true">
+    <View id="container" width="100%" top="0" height="Ti.UI.SIZE" borderRadius="0" borderWidth="5" borderColor="#fff" onTouchend="touchEndHandler">
 
       <!-- circle -->
       <View id="circle" left="10" width="40" height="40" borderRadius="20" borderColor="black" backgroundColor="black"></View>
       <!-- index -->
-      <Label id="index" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="X" left="10" width="40" height="40" color="white"></Label>
+      <Label id="rowIndex" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="X" left="10" width="40" height="40" color="white"></Label>
       <!-- item label -->
       <Label id="label" left="60" text="..."></Label>
       <!-- padding -->

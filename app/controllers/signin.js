@@ -32,6 +32,8 @@ function doSignin(e)
       }
 
       Ti.API.info('success!', jsonResponse);
+      // set isRegistered local property
+      Ti.App.Properties.setString('isRegistered', "true");
       // store user model
       var userVO = new ModelUsers().setter(jsonResponse);
       //Ti.API.info('uservo', userVO.getter());

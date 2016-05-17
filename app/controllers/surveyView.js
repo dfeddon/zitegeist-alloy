@@ -1,6 +1,8 @@
 var config = require("singleton-config");
 var ApiService = require("api.services");
 
+var ROW_SELECTED_COLOR = "blue";
+
 var isLoaded = false;
 var data = config.navigation.data;
 var metric;
@@ -52,6 +54,61 @@ function loadMetric()
 
       // add to tableview
       $.tableView.data = rowData;
+      resetMetricItemRows(true);
     }
   });
+}
+
+$.container.addEventListener("metricItemSelected", metricItemSelectedHandler);
+
+function resetMetricItemRows(force)
+{
+  Ti.API.info('rows:', $.tableView.data[0].rowCount);
+
+  var count = 1;
+  _.each($.tableView.data[0].rows, function(row)
+  {
+    Ti.API.info(':', JSON.stringify(row));
+    //if (row.backgroundColor == ROW_SELECTED_COLOR || force === true)
+    if ((row.classes && row.classes[0] == "rowStyleSelected") || force === true)
+    {
+      if (force === false)
+        $.removeClass(row, row.classes[0]);
+      //row.backgroundColor = (count % 2 === 0) ? '#80d7daff' : 'white';
+      $.addClass(row, (count % 2 === 0) ? "rowStyleUnselectedAlt" : "rowStyleUnselected");
+    }
+    count++;
+  });
+  //var row;
+  //row = $.tableView.selectRow(x);
+}
+
+function metricItemSelectedHandler(e)
+{
+  Ti.API.info('metricItemSelectedHandler', e);
+  if (data.multiples === false)
+    resetMetricItemRows(false);
+  // if (e.row.backgroundColor == ROW_SELECTED_COLOR)
+  //   e.row.backgroundColor = (e.args.index % 2 === 0) ? "#80d7daff" : "white";
+  // else e.row.backgroundColor = ROW_SELECTED_COLOR;
+  Ti.API.info('classname', e.row.classes[0]);
+  if (e.row.classes[0] == "rowStyleSelected")
+  {
+    $.removeClass(e.row, e.row.classes[0]);
+    $.addClass(e.row, (e.args.index % 2 === 0) ? "rowStyleUnselectedAlt" : "rowStyleUnselected");
+  }
+  else
+  {
+    Ti.API.info('select style');
+    $.removeClass(e.row, e.row.classes[0]);
+    $.addClass(e.row, "rowStyleSelected");
+    //$.addClass(e.row.getView("rowIndex", "rowStyleSelected");
+    //Ti.API.info('classname', e.row.classes);
+    //Ti.API.info('rowlabel', e.row.children[0];
+  }
+}
+
+function tableViewCreated(e)
+{
+  Ti.API.info('tableview created');
 }

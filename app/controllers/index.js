@@ -9,16 +9,18 @@ var TRUE_TOP = 20;
 var NAVIGATION_HEIGHT = 40;
 var WRAPPER_TOP = TRUE_TOP + NAVIGATION_HEIGHT;
 
-var currentView, modalView, viewFrom, viewTo;
+var currentView, modalView;
+var viewFrom, viewTo, fromModal, toModal;
 var campaignListView;
 var beaconClicked;
 
 function openHandler(e)
 {
-    Ti.API.info('opened!');
-    if (Ti.App.Properties.isRegistered === true)
+    Ti.API.info('opened!', Ti.App.Properties.getString('isRegistered'));
+    if (Ti.App.Properties.getString('isRegistered') === "true")
     {
         Ti.API.info('login...');
+        $.contentWrapper.fireEvent("navChangeEvent", {from:null, to:"signin"});
     }
     else
     {
@@ -55,7 +57,7 @@ function beaconAddHandler(e)
   Ti.API.info('beacon ids', user.beacons);
 
   // update user (async)
-  UserHelper.updateUser(user);
+  //UserHelper.updateUser(user);
 
   // update campaigns
   refreshCampaignList();
@@ -124,6 +126,9 @@ function navChangeEvent(e)
     if (e.fromModal == null) e.fromModal = false;
     if (e.toModal == null) e.toModal = false;
 
+    fromModal = e.fromModal;
+    toModal = e.toModal;
+
     if (e.toModal === true && e.fromModal === false)
     {
       $.contentModal.show();
@@ -138,7 +143,8 @@ function navChangeEvent(e)
     if (e.toModal === false && e.fromModal === false)
     {
       // remove currentView
-      $.contentWrapper.remove(currentView);
+      if (currentView != null)
+        $.contentWrapper.remove(currentView);
       // create new view
       currentView = Alloy.createController(e.to).getView();
       // add new view to wrapper
@@ -163,7 +169,7 @@ function navChangeEvent(e)
             if (e.to == "campaignStreams")
             {
               // navigation
-              new ViewHelper().hideElement($.backButton);
+              $.backButton.hide();// new ViewHelper().hideElement($.backButton);
               navBarToggle("on");
               footerBarToggle("on");
               // TODO: Also remove onboardSplash view
@@ -178,28 +184,40 @@ function navChangeEvent(e)
     {
       case "campaignStreams":
         $.headerText.text = "Campaigns";
-        new ViewHelper().showElement($.createCampaignButton);
+        $.createCampaignButton.show();// new ViewHelper().showElement($.createCampaignButton);
+        $.footerBar.show();// new ViewHelper().showElement($.footerBar);
       break;
 
       case "userProfile":
         $.headerText.text = "Profile";
-        new ViewHelper().hideElement($.menuButton);
-        new ViewHelper().showElement($.backButton);
-        new ViewHelper().hideElement($.createCampaignButton);
+        $.menuButton.hide();// new ViewHelper().hideElement($.menuButton);
+        $.backButton.show();// new ViewHelper().showElement($.backButton);
+        $.createCampaignButton.hide();// new ViewHelper().hideElement($.createCampaignButton);
+        $.footerBar.show();// new ViewHelper().showElement($.footerBar);
+      break;
+
+      case "myProfile":
+        $.headerText.text = "My Profile";
+        $.menuButton.hide();// new ViewHelper().hideElement($.menuButton);
+        $.backButton.show();// new ViewHelper().showElement($.backButton);
+        $.createCampaignButton.show();// new ViewHelper().hideElement($.createCampaignButton);
+        $.footerBar.show();// new ViewHelper().showElement($.footerBar);
       break;
 
       case "surveyView":
         $.headerText.text = "Consensus";
-        new ViewHelper().hideElement($.menuButton);
-        new ViewHelper().showElement($.backButton);
-        new ViewHelper().hideElement($.createCampaignButton);
+        $.menuButton.hide(); //new ViewHelper().hideElement($.menuButton);
+        $.backButton.show(); //new ViewHelper().showElement($.backButton);
+        $.createCampaignButton.hide(); //new ViewHelper().hideElement($.createCampaignButton);
+        $.footerBar.hide(); //new ViewHelper().hideElement($.footerBar);
       break;
 
       case "createCampaign":
         $.headerText.text = "Publish";
-        new ViewHelper().hideElement($.menuButton);
-        new ViewHelper().showElement($.backButton);
-        new ViewHelper().hideElement($.createCampaignButton);
+        $.menuButton.hide(); //new ViewHelper().hideElement($.menuButton);
+        $.backButton.show(); //new ViewHelper().showElement($.backButton);
+        $.createCampaignButton.hide(); //new ViewHelper().hideElement($.createCampaignButton);
+        $.footerBar.show(); //new ViewHelper().showElement($.footerBar);
       break;
     }
 }
@@ -262,20 +280,26 @@ function backClickHandler(e)
   {
     case "userProfile":
       navChangeEvent({from:"userProfile", to:"campaignStreams", fromModal: true, toModal: false});
-      new ViewHelper().hideElement($.backButton);
-      new ViewHelper().showElement($.menuButton);
+      $.backButton.hide(); //new ViewHelper().hideElement($.backButton);
+      $.menuButton.show(); //new ViewHelper().showElement($.menuButton);
       break;
+
+      case "myProfile":
+        navChangeEvent({from:"myProfile", to:viewFrom, fromModal: toModal, toModal: false});
+        $.backButton.hide(); //new ViewHelper().hideElement($.backButton);
+        $.menuButton.show(); //new ViewHelper().showElement($.menuButton);
+        break;
 
       case "surveyView":
         navChangeEvent({from:"surveyView", to:"campaignStreams", fromModal: true, toModal: false});
-        new ViewHelper().hideElement($.backButton);
-        new ViewHelper().showElement($.menuButton);
+        $.backButton.hide(); //new ViewHelper().hideElement($.backButton);
+        $.menuButton.show(); //new ViewHelper().showElement($.menuButton);
         break;
 
       case "createCampaign":
         navChangeEvent({from:"createCampaign", to:"campaignStreams", fromModal: true, toModal: false});
-        new ViewHelper().hideElement($.backButton);
-        new ViewHelper().showElement($.menuButton);
+        $.backButton.hide(); //new ViewHelper().hideElement($.backButton);
+        $.menuButton.show(); //new ViewHelper().showElement($.menuButton);
         break;
   }
 }
@@ -283,6 +307,12 @@ function backClickHandler(e)
 function createCampaignHandler(e)
 {
   navChangeEvent({from:"campaignStreams", to:"createCampaign", fromModal:false, toModal:true, data:{}});
+}
+
+function myProfileTouchEndHandler(e)
+{
+  Ti.API.info('myProfile touch end', e);
+  navChangeEvent({from:viewTo, to:"myProfile", fromModal:toModal, toModal:true, data:{}});
 }
 
 $.index.open();

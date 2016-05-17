@@ -39,3 +39,18 @@
   color: "#e3e6e3",
   font: {fontSize: 22, fontFamily: "LeagueGothic-Regular"},
 }
+".rowStyleSelected":
+{
+  backgroundColor: "green",
+  //color: "black"
+}
+".rowStyleUnselected":
+{
+  backgroundColor: "white",
+  //color: "black"
+}
+".rowStyleUnselectedAlt":
+{
+  backgroundColor: "#80d7daff",
+  //color: "black"
+}

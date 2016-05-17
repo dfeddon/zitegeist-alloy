@@ -1,5 +1,5 @@
 <Alloy>
-  <ScrollView id="scrollView" layout="vertical" left="15" right="15" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" top="0" bottom="0" backgroundColor="#2775aa" onPostlayout="postLayoutHandler">
+  <ScrollView id="scrollView" layout="vertical" left="0" right="0" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" top="0" bottom="0" backgroundColor="#2775aa" onPostlayout="postLayoutHandler">
 
   <!-- <View top="10" left="15" right="15" height="Ti.UI.SIZE" backgroundColor="transparent" onPostlayout="postLayoutHandler"> -->
 
@@ -12,13 +12,15 @@
     <!-- Options -->
     <View id="options" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
       <Label top="10" left="0">OPTIONS</Label>
+
       <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
         <Switch left="10" value="false"></Switch>
         <Label left="10">Include Media?</Label>
-        <ImageView left="50" width="50" height="50"></ImageView>
+        <!-- <ImageView left="50" width="50" height="50"></ImageView> -->
       </View>
-      <View id="privatize" top="10" left="15" right="15" layout="horizontal" height="Ti.UI.SIZE" isAdvanced="true">
-        <Switch left="10" value="false"></Switch>
+
+      <View id="privatize" top="10" left="10" right="15" layout="horizontal" height="Ti.UI.SIZE" isAdvanced="true">
+        <Switch left="0" value="false"></Switch>
         <Label left="10">Privatize Results?</Label>
       </View>
     </View>

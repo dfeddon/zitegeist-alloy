@@ -12,7 +12,7 @@
         <View left="5" height="Ti.UI.SIZE">
           <!-- Rewards -->
           <ImageView right="15" top="0" width="30" height="35" image="/images/reward-creds.png"></ImageView>
-          <Label id="rewardcredits" right="5" width="30" top="5">25</Label>
+          <Label id="rewardcredits" right="6" width="30" top="6">25</Label>
         </View>
       </View>
       <!-- Username -->
@@ -21,26 +21,31 @@
       <View left="75" top="50" height="Ti.UI.SIZE">
         <Label id="teaser" left="0" right="15" top="0">Are you planning to vote in next month's CROA election? Let us know which candidate has your vote!</Label>
       </View>
+
       <!-- Tally -->
-      <View left="0" top="80" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
-        <View left="30" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
+      <View left="17" top="70" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
+        <View left="0" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
         <!-- vertical bar -->
-        <ImageView top="0" width="8" height="40" borderRadius="5" backgroundColor="#a5aaa7" borderColor="#a5aaa7"/>
+        <!-- <ImageView top="0" width="8" height="40" borderRadius="5" backgroundColor="#a5aaa7" borderColor="#a5aaa7"/> -->
         <!-- circle -->
-        <ImageView bottom="0" width="16" height="16" borderRadius="9" backgroundColor="#a5aaa7" borderColor="#a5aaa7"/>
+        <!-- <ImageView bottom="0" width="16" height="16" borderRadius="9" backgroundColor="#a5aaa7" borderColor="#a5aaa7"/> -->
         <!-- inner circle -->
-        <ImageView bottom="4" width="8" height="8" borderRadius="5" backgroundColor="#050505" borderColor="#050505"/>
+        <!-- <ImageView bottom="4" width="8" height="8" borderRadius="5" backgroundColor="#050505" borderColor="#050505"/> -->
+        <ImageView width="40" height="8" left="0" borderRadius="5" backgroundColor="#a5aaa7" borderColor="#a5aaa7"/>
+        <ImageView width="20" height="4" left="5" borderRadius="0" backgroundColor="#050505" borderColor="#050505"/>
         <!-- progress -->
-        <ImageView bottom="8" height="20" width="4" borderRadius="4" backgroundColor="#050505" borderColor="#050505"/>
+        <!-- <ImageView bottom="8" height="20" width="4" borderRadius="4" backgroundColor="#050505" borderColor="#050505"/> -->
       </View>
+
         <!-- percent text -->
-        <View left="10" bottom="20" height="Ti.UI.SIZE" layout="horizontal">
-          <Label id="percent" left="0">55</Label>
-          <Label id="percentSymbol" left="0">%</Label>
+        <View bottom="20" left="0" height="Ti.UI.SIZE" width="Ti.UI.SIZE">
+          <Label id="percent" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" width="40">55%</Label>
+          <!-- <Label id="percentSymbol" left="0">%</Label> -->
         </View>
       </View>
+
       <!-- Temp Spacer -->
-      <View width="1" height="10" left="0" top="135"></View>
+      <View width="1" height="1" left="0" top="110"></View>
     </View>
   </TableViewRow>
 </Alloy>
