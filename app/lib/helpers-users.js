@@ -1,5 +1,6 @@
 var config = require("singleton-config");
 var ModelUsers = require("models-users");
+var ApiService = require("api.services");
 
 function UserHelper()
 {
@@ -25,21 +26,46 @@ UserHelper.prototype.getUser = function()
   return config.user;//.getter();
 };
 
-UserHelper.prototype.getUserBeaconIds = function()
+UserHelper.prototype.getUserBeaconIds = function(callback)
 {
   var ids = [];
 
-  if (config.user && config.user.beacons)
+  this.getUserBeacons(function(results)
   {
-    Ti.API.info('array::', config.user.beacons);
-    _.each(config.user.beacons, function(beacon)
-    {
-      Ti.API.info('::', beacon);
-      ids.push(beacon);
-    });
-  }
+    Ti.API.info('** beacons', results.beacons);//return;
 
-  return ids;
+    if (config.user && results.length > 0)
+    {
+      Ti.API.info('array::', results);
+      _.each(results, function(item)
+      {
+        Ti.API.info('::', item);
+        ids.push(item.beacon._id);
+      });
+    }
+    //Ti.API.info('ids:', ids);
+
+    return callback(ids);
+  });
+};
+
+UserHelper.prototype.getUserBeacons = function(callback)
+{
+
+  new ApiService().api("get", "users/beacons/" + config.user._id, {}, function(err, jsonResponse)
+  {
+    if (err)
+    {
+      Ti.API.info('error', err);
+      //campaignListView.data = lastdata;
+    }
+    else
+    {
+      Ti.API.info('success', jsonResponse);
+      return callback(jsonResponse);
+    }
+  });
+
 };
 
 module.exports = UserHelper;

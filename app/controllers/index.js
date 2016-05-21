@@ -79,7 +79,7 @@ function refreshCampaignList()
     }
     else
     {
-      Ti.API.info('success');//, jsonResponse);
+      Ti.API.info('success', jsonResponse);
       new CampaignHelper().setter(jsonResponse);
       Ti.API.info('campaigns', new CampaignHelper().getCampaigns());
       //campaignListView.addCampaignsFromBeacons(jsonResponse);

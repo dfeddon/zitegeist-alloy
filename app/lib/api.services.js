@@ -67,16 +67,16 @@ ApiService.prototype.api = function(method, route, data, callback)
     var xhr = Titanium.Network.createHTTPClient();
     xhr.setRequestHeader('Cache-Control', 'no-cache');
     xhr.setRequestHeader('Cache-Control', 'no-store');
-    xhr.clearCookies("http://www.med-wire.com");
+    //xhr.clearCookies("http://www.med-wire.com");
 
     xhr.open(method.toUpperCase(), baseURI + route);
 
     // authorization request header (if apikey exists)
-    if (config.user)
+    /*if (config.user)
     {
         xhr.setRequestHeader('Authorization', config.user.apiKey);//,ld.ui.auth);
         Ti.API.info("auth", config.user.apiKey);//ld.ui.auth);
-    }
+    }*/
     // check for additional (custom) header -- sent as "_header"
     // for example: xhr.setRequestHeader('enctype', 'multipart/form-data');
     // we send in the requestor - {_header: {name:'enctype', value:'multipart/form-data'}}
@@ -134,12 +134,12 @@ ApiService.prototype.api = function(method, route, data, callback)
     }
 
     // final removal of encrypt if encrypting is false
-    if (encrypting == false)
+    if (encrypting === false)
     {
         if (data.hasOwnProperty('encrypt'))
         {
             delete data.encrypt;
-        };
+        }
     }
 
     Ti.API.info("encrypt =", encrypting);
@@ -149,7 +149,9 @@ ApiService.prototype.api = function(method, route, data, callback)
     {
         Ti.API.info('data received...', this.responseText);
         //try {
+        if (this.responseText != null)
             jsonResponse = JSON.parse(this.responseText);
+        else console.log('response is NULL');
         //} catch(e)
         // {
             // Ti.API.info('caught error', route);
@@ -157,7 +159,7 @@ ApiService.prototype.api = function(method, route, data, callback)
             // Ti.API.info(this.responseText);
         // }
 
-        if (encrypting == true)
+        if (encrypting === true)
         {
             // decrypt
             Ti.API.info("decrypting response...", jsonResponse);
@@ -189,7 +191,7 @@ ApiService.prototype.api = function(method, route, data, callback)
 
         return callback(e, null);
     };
-    if (encrypting == true)
+    if (encrypting === true)
     {
         // encrypt data obj
         //Ti.API.info("encrypting parameters", data);
@@ -225,7 +227,7 @@ ApiService.prototype.doEncrypt = function(obj, callback)
                 // TODO: This is a hack -- validation should be handled in the model, not here!
                 obj[k] = '';
             }
-        if (typeof obj[k] == "object" && obj[k] !== null && obj[k] !=undefined)
+        if (typeof obj[k] == "object" && obj[k] !== null && obj[k] != undefined)
         {
             this.eachRecursive(obj[k], true, callback);
         }
