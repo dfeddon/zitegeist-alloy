@@ -1,0 +1,12 @@
+<Alloy>
+  <View top="0" id="container" height="Ti.UI.FILL" onPostlayout="postLayoutHandler" bubbleParent="true">
+
+    <View id="medalsView" top="0" backgroundColor="black" color="white" height="40" width="100%" layout="horizontal">
+      <Label id="bronzeLabel" top="0" width="25%"></Label>
+      <Label id="silverLabel" top="0" width="25%"></Label>
+      <Label id="goldLabel" top="0" width="25%"></Label>
+      <Label id="obsidianLabel" top="0" width="25%"></Label>
+    </View>
+
+  </View>
+</Alloy>

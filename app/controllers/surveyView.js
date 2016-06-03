@@ -11,7 +11,7 @@ var page = 0;
 Ti.API.info('config data', config.navigation.data);
 
 $.teaserText.text = config.navigation.data.teaser;
-$.brandSubheader.text = config.navigation.data.owner.displayName;
+$.brandSubheader.text = config.navigation.data.brand.owner.displayName;
 
 function postLayoutHandler(e)
 {

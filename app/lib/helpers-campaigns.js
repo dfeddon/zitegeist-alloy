@@ -45,6 +45,7 @@ CampaignHelper.prototype.getCampaignIds = function()
 
 CampaignHelper.prototype.searchCampaignsByBeaconIds = function(callback)
 {
+  Ti.API.info('searchCampaignsByBeaconIds');
   new UserHelper().getUserBeaconIds(function(beaconIds)
   {
     beaconsIds = beaconIds.toString();

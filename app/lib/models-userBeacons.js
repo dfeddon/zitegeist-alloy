@@ -4,9 +4,8 @@ function UserBeacon()
 {
     Ti.API.info("UserBeacon constructor");
 
-    this._id = undefined;
     this.beacon = undefined;
-    this.age = 0;
+    //this.age = 0;
     this.archived = false;
     this.dateCreated = undefined;
     this.dateEdited = undefined;
@@ -19,6 +18,7 @@ UserBeacon.prototype.setter = function(obj)
         this[prop] = obj[prop];
     }
     Ti.API.info("UserBeacon setter", this);
+    return this;
 };
 
 UserBeacon.prototype.getter = function()

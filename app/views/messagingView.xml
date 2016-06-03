@@ -1,0 +1,4 @@
+<Alloy>
+  <View top="0" id="container" height="Ti.UI.FILL" onPostlayout="postLayoutHandler" bubbleParent="true">
+  </View>
+</Alloy>

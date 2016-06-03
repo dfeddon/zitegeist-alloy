@@ -1,0 +1,36 @@
+"#bronzeBar":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  backgroundColor: "#cd7f32",
+  color: "white",
+  /*height: Ti.UI.FILL,*/
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+}
+"#silverBar":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  backgroundColor: "#C9D1D3",
+  color: "black",
+  /*height: Ti.UI.FILL,*/
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+}
+"#goldBar":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  backgroundColor: "#EEBC1D",
+  color: "black",
+  /*height: Ti.UI.FILL,*/
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+}
+"#obsidianBar":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  backgroundColor: "#000033",
+  color: "white",
+  /*height: Ti.UI.FILL,*/
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+}
+"Label":
+{
+  font: {fontSize: 9, fontFamily: "SFUIDisplay-Medium"},
+}

@@ -1,0 +1,36 @@
+<Alloy>
+  <View top="0" id="container" height="Ti.UI.SIZE" onPostlayout="postLayoutHandler" bubbleParent="true">
+
+    <!-- Rank Text -->
+    <View id="rankedContainer" top="0" left="0" right="0" layout="horizontal">
+      <!-- Bronze -->
+      <View id="bronzeTextView" top="25" left="10" width="45%" backgroundColor="transparent" height="Ti.UI.SIZE" layout="vertical">
+        <Label left="0" color="#cd7f32" text="RANKED CAMPAIGNS"></Label>
+        <Label left="0" color="#cd7f32" text="DEMOGRAPHIC PRESCREENS"></Label>
+        <Label left="0" color="#cd7f32" text="VIEW SPONSORED CAMPAIGNS"></Label>
+      </View>
+      <!-- Gold -->
+      <View id="goldTextView" top="25" left="10" width="45%" backgroundColor="transparent" height="Ti.UI.SIZE" layout="vertical">
+        <Label right="0" color="#EEBC1D" text="CREATE SUGGESTED CAMPAIGNS"></Label>
+        <Label right="0" color="#EEBC1D" text="10 QUESTION CAMPAIGNS"></Label>
+        <Label right="0" color="#EEBC1D" text="WHY? FIELDS UNLOCKED"></Label>
+      </View>
+    </View>
+    <!-- Ranks -->
+    <View id="ranksView" top="100" backgroundColor="transparent" height="Ti.UI.SIZE" width="75%" layout="horizontal">
+      <View id="bronzeView" top="0" width="25%">
+        <!-- <View id="bronzeBar" width="40" height="150" borderRadius="20"></View> -->
+      </View>
+      <View id="silverView" top="0" width="25%">
+        <!-- <View id="silverBar" width="40" height="150" borderRadius="20"></View> -->
+      </View>
+      <View id="goldView" top="0" width="25%">
+        <!-- <View id="goldBar" width="40" height="150" borderRadius="20"></View> -->
+      </View>
+      <View id="obsidianView" top="0" width="25%">
+        <!-- <View id="obsidianBar" width="40" height="150" borderRadius="20"></View> -->
+      </View>
+    </View>
+
+  </View>
+</Alloy>

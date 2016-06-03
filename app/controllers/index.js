@@ -36,6 +36,7 @@ function openHandler(e)
     }
 }
 
+config.views.index = $.contentWrapper;
 $.contentWrapper.addEventListener("navChangeEvent", navChangeEvent);
 $.contentWrapper.addEventListener("beaconClickEvent", beaconClickHandler);
 $.contentWrapper.addEventListener("campaignListCreated", campaignListCreatedHandler);
@@ -49,10 +50,49 @@ function beaconAddHandler(e)
   // cancel event
   e.cancelBubble = true;
 
-  // add beacon id to user beacons
+  // add beacon id to user.beacons
   var user = new UserHelper().getUser();
-  user.beacons.push(e.beacon._id);
-  user.setter();
+  // validate: duplicates FIXME: this should be done at the beaconcloud level
+  if (_.findWhere(user.beacons, {'_id': e.beacon._id}) !== undefined)// === true)
+  {
+    Ti.API.info('beacon exists, get out');
+    return;
+  }
+  // validate is new (no beacon id)
+  if (e.beacon._id == null)
+  {
+    Ti.API.info('undefined beacon, add to db!');
+    // post beacon
+    // update user.beacons with new beacon id
+  }
+  else
+  {
+    // update local user.beacons
+    //user.beacons.push(e.beacon);//._id);
+    //user.setter();
+    Ti.API.info('save updated beacons to user store', user.beacons);//e.beacon);
+    //return;
+    // save beacon id to user TODO: UPDATE user.beacons
+    new ApiService().api("put", "users/" + user._id, {beacons:user.beacons}, function(err, jsonResponse)
+    {
+      if (err)
+      {
+        Ti.API.info('error', err);
+        //campaignListView.data = lastdata;
+      }
+      else
+      {
+        Ti.API.info('user.beacons put success', jsonResponse);
+        //new CampaignHelper().setter(jsonResponse);
+        //Ti.API.info('campaigns', new CampaignHelper().getCampaigns());
+        //campaignListView.addCampaignsFromBeacons(jsonResponse);
+      }
+    });
+  }
+
+  // add beacon id to user beacons
+  //user.beacons.push(e.beacon._id);
+  //user.setter();
 
   Ti.API.info('beacon ids', user.beacons);
 
@@ -60,17 +100,17 @@ function beaconAddHandler(e)
   //UserHelper.updateUser(user);
 
   // update campaigns
-  refreshCampaignList();
+  //refreshCampaignList();
 }
 
 function refreshCampaignList()
 {
-  Ti.API.info('refreshCampaignList');
+  Ti.API.info('index:refreshCampaignList');
   var beaconIds = new UserHelper().getUserBeaconIds();
   Ti.API.info('beaconIds', beaconIds.toString());
   // search campaign for matching beacons
   // /campaigns/beacons/search/:ids
-  new ApiService().api("get", "campaigns/beacons/search/" + "5709236964c0c51739826745,570927f764c0c51739826747", {}, function(err, jsonResponse)
+  new ApiService().api("get", "campaigns/beacons/search/" + beaconIds, {}, function(err, jsonResponse)
   {
     if (err)
     {
@@ -117,6 +157,12 @@ function beaconClickHandler(e)
 function navChangeEvent(e)
 {
     Ti.API.info('nav changed', e);
+
+    if (viewTo == e.to)
+    {
+      Ti.API.info('attempting to nav to same view, exiting...');
+      return;
+    }
 
     viewFrom = e.from;
     viewTo = e.to;
@@ -198,6 +244,14 @@ function navChangeEvent(e)
 
       case "myProfile":
         $.headerText.text = "My Profile";
+        $.menuButton.hide();// new ViewHelper().hideElement($.menuButton);
+        $.backButton.show();// new ViewHelper().showElement($.backButton);
+        $.createCampaignButton.show();// new ViewHelper().hideElement($.createCampaignButton);
+        $.footerBar.show();// new ViewHelper().showElement($.footerBar);
+      break;
+
+      case "messagingView":
+        $.headerText.text = "Messages";
         $.menuButton.hide();// new ViewHelper().hideElement($.menuButton);
         $.backButton.show();// new ViewHelper().showElement($.backButton);
         $.createCampaignButton.show();// new ViewHelper().hideElement($.createCampaignButton);
@@ -290,6 +344,12 @@ function backClickHandler(e)
         $.menuButton.show(); //new ViewHelper().showElement($.menuButton);
         break;
 
+        case "messagingView":
+          navChangeEvent({from:"messagingView", to:viewFrom, fromModal: toModal, toModal: false});
+          $.backButton.hide(); //new ViewHelper().hideElement($.backButton);
+          $.menuButton.show(); //new ViewHelper().showElement($.menuButton);
+          break;
+
       case "surveyView":
         navChangeEvent({from:"surveyView", to:"campaignStreams", fromModal: true, toModal: false});
         $.backButton.hide(); //new ViewHelper().hideElement($.backButton);
@@ -313,6 +373,12 @@ function myProfileTouchEndHandler(e)
 {
   Ti.API.info('myProfile touch end', e);
   navChangeEvent({from:viewTo, to:"myProfile", fromModal:toModal, toModal:true, data:{}});
+}
+
+function messagingTouchEndHandler(e)
+{
+  Ti.API.info('messagingTouchEndHandler', e);
+  navChangeEvent({from:viewTo, to:"messagingView", fromModal:toModal, toModal:true, data:{}});
 }
 
 $.index.open();

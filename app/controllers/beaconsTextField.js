@@ -1,5 +1,7 @@
 var ApiService = require("api.services");
 var config = require("singleton-config");
+var ModelBeacons = require("models-beacons");
+var BeaconHelper = require("helpers-beacons");
 
 var lastdata = [];
 var beaconsSelected = [];
@@ -8,9 +10,21 @@ $.textField.addEventListener("change", textFieldChangeHandler);
 $.textField.addEventListener("blur", textFieldBlurHandler);
 $.tableview.addEventListener('click', tableRowSelectedHandler);
 
+exports.addBeacon = function(beacon)
+{
+  Ti.API.info('addBeacon', beacon);
+  // add to local store
+  beaconsSelected.push(beacon._id);
+
+  // add to cloud
+  $.beacons.addBeaconToCloud(beacon);
+};
+
 function tableRowSelectedHandler(e)
 {
   Ti.API.info('row select', JSON.stringify(e.rowData));
+
+  //if (e.rowData.)
 
   // clear tableview
   $.tableview.setData([]);
@@ -91,7 +105,7 @@ function textFieldChangeHandler(e)
   if (e.value.length < 3)
   {
     //Ti.API.info('clear text');
-    $.tableview.data = lastdata;
+    $.tableview.data = [];//lastdata;
   }
   else
   {
@@ -107,7 +121,7 @@ function textFieldChangeHandler(e)
       }
       else
       {
-        Ti.API.info('success');//, jsonResponse);
+        //Ti.API.info('success', jsonResponse);
 
         if (jsonResponse.length === 0)
         {
@@ -121,14 +135,25 @@ function textFieldChangeHandler(e)
         }
         else $.tableview.height = Ti.UI.SIZE;
 
-        $.tableview.data = jsonResponse;
+        // avoid duplicates
+        //var getting = new BeaconHelper().getUserBeacons();
+        var beacons = [];
+        _.each(jsonResponse, function(item)
+        {
+          if (new BeaconHelper().userBeaconExistsById(item._id) === false)
+            beacons.push(item);
+        });
+        //var beacons = _.without.apply(_,[jsonResponse].concat(getting));
+        //Ti.API.info('beacs', beacons);
+
+        $.tableview.data = beacons;//jsonResponse;
         // TODO: sort by popularity
 
-        for (var item in jsonResponse)
+        for (var item in beacons)//jsonResponse)
         {
           // avoid rewriting title (oft leads to empty field)
-          if ($.tableview.data[0].rows[item].title != jsonResponse[item].name)
-            $.tableview.data[0].rows[item].title = jsonResponse[item].name;
+          if ($.tableview.data[0].rows[item].title != beacons[item].name)
+            $.tableview.data[0].rows[item].title = beacons[item].name;
         }
         lastdata = $.tableview.data;
       }

@@ -30,13 +30,14 @@ Campaign.prototype.setter = function(obj)
     {
         this[prop] = obj[prop];
 
-        if (prop == "email" || prop == "role")
-        {
-            Ti.API.info("LoginVO setter", prop, obj[prop]);
-            Ti.App.Properties.setString("LoginVO_" + obj[prop]);
-        }
+        // if (prop == "email" || prop == "role")
+        // {
+        //     Ti.API.info("LoginVO setter", prop, obj[prop]);
+        //     Ti.App.Properties.setString("LoginVO_" + obj[prop]);
+        // }
     }
-    Ti.API.info("LoginVO setter", this);
+    //Ti.API.info("LoginVO setter", this);
+    return this;
 };
 
 Campaign.prototype.getter = function()

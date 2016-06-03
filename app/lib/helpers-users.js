@@ -6,8 +6,9 @@ function UserHelper()
 {
   Ti.API.info('UserHelper constructor');
 
-  if (config.user == null)
-    config.user = new ModelUsers().setter();
+  //if (config.user == null)
+    //config.user = new ModelUsers().setter();
+    this.user = config.user;
 
   //this.users = [];
   //this.user = null;
@@ -28,11 +29,12 @@ UserHelper.prototype.getUser = function()
 
 UserHelper.prototype.getUserBeaconIds = function(callback)
 {
+  Ti.API.info('getUserBeaconIds==', this.user);
   var ids = [];
 
   this.getUserBeacons(function(results)
   {
-    Ti.API.info('** beacons', results.beacons);//return;
+    Ti.API.info('** user beacons', results.length, results);//return;
 
     if (config.user && results.length > 0)
     {
@@ -51,7 +53,7 @@ UserHelper.prototype.getUserBeaconIds = function(callback)
 
 UserHelper.prototype.getUserBeacons = function(callback)
 {
-
+  Ti.API.info('GET users/beacons');
   new ApiService().api("get", "users/beacons/" + config.user._id, {}, function(err, jsonResponse)
   {
     if (err)
@@ -61,11 +63,24 @@ UserHelper.prototype.getUserBeacons = function(callback)
     }
     else
     {
-      Ti.API.info('success', jsonResponse);
+      Ti.API.info('success (GET /users/beacons)', jsonResponse);
       return callback(jsonResponse);
     }
   });
+};
 
+UserHelper.prototype.userBrandRanks = function(ranks)
+{
+  if (ranks == null)
+    return config.userBrand.ranks;
+  else config.userBrand.ranks = ranks;
+};
+
+UserHelper.prototype.isFollowing = function(id)
+{
+  if (_.findWhere(config.userFollowing, { 'brand': id }) !== undefined)
+    return true;
+  else return false;
 };
 
 module.exports = UserHelper;

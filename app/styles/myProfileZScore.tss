@@ -1,0 +1,36 @@
+"#trendDay":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  backgroundColor: "#f61010",
+  color: "white",
+  //borderColor: "black",
+  height: Ti.UI.FILL,
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+}
+"#trendWeek":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  backgroundColor: "#206720",
+  color: "white",
+  //borderColor: "black",
+  height: Ti.UI.FILL,
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+}
+"#trendMonth":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  backgroundColor: "#206720",
+  color: "white",
+  //borderColor: "black",
+  height: Ti.UI.FILL,
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+}
+"#trendYear":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  backgroundColor: "#206720",
+  color: "white",
+  //borderColor: "black",
+  height: Ti.UI.FILL,
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+}

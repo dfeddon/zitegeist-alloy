@@ -34,7 +34,17 @@ ApiService.prototype.api = function(method, route, data, callback)
 
     route = encodeURI(route);
 
-    var baseURI = config.endpoint + "/";// "/app/";
+    var routePrepend = "/";
+    var isAuth = true;
+    if (route != "oauth2/token")
+    {
+        // prepend uri
+        routePrepend = "/api/";
+
+        // add Authroization header with Bearer token
+        isAuth = false;
+    }
+    var baseURI = config.endpoint + routePrepend;
 
     // encrypt/decrypt data?
     var encrypting = false; // default value
@@ -62,14 +72,31 @@ ApiService.prototype.api = function(method, route, data, callback)
         }
     }
     // force encryption off/on
-    //encrypting = false;
+    encrypting = false;
+
     // create and open the HTTPClient object
     var xhr = Titanium.Network.createHTTPClient();
-    xhr.setRequestHeader('Cache-Control', 'no-cache');
-    xhr.setRequestHeader('Cache-Control', 'no-store');
+    xhr.open(method.toUpperCase(), baseURI + route);
+
+    Ti.API.info('isAuth', isAuth);
+    if (isAuth !== true)
+    {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + config.token);
+        Ti.API.info('setting token', config.token);
+    }
+
+    //xhr.setRequestHeader('Cache-Control', 'no-cache');
+    //xhr.setRequestHeader('Cache-Control', 'no-store');
     //xhr.clearCookies("http://www.med-wire.com");
 
-    xhr.open(method.toUpperCase(), baseURI + route);
+    if (method.toLowerCase() == "post" || method.toLowerCase() == "put")
+    {
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+        data = JSON.stringify(data);
+    }
+
+    // stringify data
+    //Ti.API.info('newdata', data);
 
     // authorization request header (if apikey exists)
     /*if (config.user)
@@ -109,7 +136,7 @@ ApiService.prototype.api = function(method, route, data, callback)
     {
         encrypting = false;
     }
-    else if (encrypting == true)// && count > 0)
+    else if (encrypting === true)// && count > 0)
     {
         // encryption has been forced, not requested, so include 'encrypt=1' to requestor (for backend)
         data.encrypt = "1";
@@ -130,7 +157,7 @@ ApiService.prototype.api = function(method, route, data, callback)
         if (data.hasOwnProperty('encrypt'))
         {
             delete data.encrypt;
-        };
+        }
     }
 
     // final removal of encrypt if encrypting is false
@@ -264,7 +291,7 @@ ApiService.prototype.eachRecursive = function(obj, encryptBool, callback)
             else
             {
                 // encrypt
-                if (encryptBool == true)
+                if (encryptBool === true)
                 {
                         //obj2[k] = Crypto.AES.encrypt(obj2[k], "Password1",{ mode: new Crypto.mode.CBC(Crypto.pad.ZeroPadding) });
                 }
@@ -307,7 +334,7 @@ ApiService.prototype.eachRecursive = function(obj, encryptBool, callback)
 
   // ensure we're running recursion on object only once
   // TODO: instead, test if returnObject is empty?
-  if (firstrun == false)
+  if (firstrun === false)
   {
     firstrun = true;
 

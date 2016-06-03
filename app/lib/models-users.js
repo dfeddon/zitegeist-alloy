@@ -15,6 +15,7 @@ function Users()
     this.addressCountry = "us";
     this.language = "en";
     this.beacons = [];
+    this.brand = {};
     this.dateCreated = undefined;
     this.dateEdited = undefined;
 }

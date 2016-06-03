@@ -14,6 +14,16 @@ function campaignListCreatedHandler(e)
   new CampaignHelper().searchCampaignsByBeaconIds(function(results)
   {
     Ti.API.info('results', results);
-    $.campaignListView.addCampaignsFromBeacons(results);
+
+    var campaigns = [];
+    _.each(results, function(campaign)
+    {
+      if (campaign.brand.owner._id != config.user._id)
+        campaigns.push(campaign);
+      else Ti.API.info('omitting campaign', campaign);
+    });
+
+    // filter user's own campaigns from results
+    $.campaignListView.addCampaignsFromBeacons(campaigns);
   });
 }

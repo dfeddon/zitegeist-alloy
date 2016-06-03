@@ -1,4 +1,11 @@
 var config = require("singleton-config");
+
+config.user = {};
+config.userBrand = {};
+config.userBrand.ranks = {};
+
+config.userFollowing = [];
+
 config.users = [];
 config.beacons = [];
 config.campaigns = [];
@@ -11,6 +18,7 @@ config.colors.primaryBG = "#03a9f4";
 config.navigation = {};
 config.viewHelper = {};
 config.viewHelper.elements = [];
+config.views = {};
 // The contents of this file will be executed before any of
 // your view controllers are ever executed, including the index.
 // You have access to all functionality on the `Alloy` namespace.

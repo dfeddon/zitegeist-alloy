@@ -33,6 +33,7 @@ Beacon.prototype.setter = function(obj)
         // }
     }
     Ti.API.info("Beacon setter", this);
+    return this;
 };
 
 Beacon.prototype.getter = function()

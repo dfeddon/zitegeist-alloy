@@ -1,0 +1,18 @@
+<Alloy>
+  <View top="0" id="container" height="Ti.UI.FILL" onPostlayout="postLayoutHandler" bubbleParent="true">
+
+    <!-- Trends -->
+    <!-- <View id="trendsView" top="0" backgroundColor="transparent" height="40" width="100%" layout="horizontal">
+      <Label id="trendDay" top="0" width="25%" text="-55"></Label>
+      <Label id="trendWeek" top="0" width="25%" text="+185"></Label>
+      <Label id="trendMonth" top="0" width="25%" text="+315"></Label>
+      <Label id="trendYear" top="0" width="25%" text="+225"></Label>
+    </View> -->
+
+    <!-- Chart -->
+    <View id="chartView" top="40" width="100%" height="100%" backgroundColor="white">
+      <Require type="view" src="zScoreChart" id="chart"/>
+    </View>
+
+  </View>
+</Alloy>

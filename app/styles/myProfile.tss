@@ -19,8 +19,36 @@
   paddingLeft: 5,
   paddingRight: 5
 }
-"#joinButton":
+/*"#joinButton":
 {
   font: {fontSize: 16, fontFamily: "LeagueGothic-Regular"},
   color: "white",
+}*/
+"#campaigns":
+{
+  font: {fontSize: 11, fontFamily: "SFUIDisplay-Medium"},
+  color: "white",
+  backgroundSelectedColor: "black",
+  backgroundColor: "#2C3E50"
+}
+"#zeitgeist":
+{
+  font: {fontSize: 11, fontFamily: "SFUIDisplay-Medium"},
+  color: "white",
+  backgroundSelectedColor: "black",
+  backgroundColor: "#2C3E50"
+}
+"#ranks":
+{
+  font: {fontSize: 11, fontFamily: "SFUIDisplay-Medium"},
+  color: "white",
+  backgroundSelectedColor: "black",
+  backgroundColor: "#2C3E50"
+}
+"#beacons":
+{
+  font: {fontSize: 11, fontFamily: "SFUIDisplay-Medium"},
+  color: "white",
+  backgroundSelectedColor: "black",
+  backgroundColor: "#2C3E50"
 }

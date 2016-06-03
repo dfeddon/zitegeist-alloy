@@ -1,6 +1,6 @@
 ".container":
 {
-	backgroundColor:"#bababb"
+	backgroundColor:"white"//"#bababb"
 }
 
 "Button":
@@ -48,4 +48,9 @@
   //backgroundColor: "white",
   paddingLeft: 5,
   paddingRight: 5
+}
+"#messagesLabel":
+{
+  color: "yellow",
+  font: {fontSize: 10, fontFamily: "SFUIDisplay-Light"},
 }

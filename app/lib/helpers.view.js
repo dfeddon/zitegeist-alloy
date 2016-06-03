@@ -30,4 +30,18 @@ ViewHelper.prototype.showElement = function(element)
 
 };
 
+ViewHelper.prototype.getChildById = function(view, id)
+{
+  Ti.API.info('id', id);
+  _.each(view.children, function(child)
+  {
+    Ti.API.info(':: child', child.id);
+    if (child.id == id)
+    {
+      Ti.API.info('got it', child);
+      return child;
+    }
+  });
+}
+
 module.exports = ViewHelper;

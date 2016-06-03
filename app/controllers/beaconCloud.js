@@ -1,11 +1,50 @@
+var ModelBeacons = require('models-beacons');
+var ModelUserBeacons = require('models-userBeacons');
+var BeaconHelper = require('helpers-beacons');
+
+var firstLoad = false;
+//var beaconCloudArray = [];
+
 function viewLayoutHandler(e)
 {
   Ti.API.info('beaconCloud layout!');
+  if (firstLoad === false)
+  {
+    $.view.fireEvent("beaconCloudCreated", {addBeaconToCloud: exports.addBeaconToCloud});
+    firstLoad = true;
+  }
 }
 
-exports.addBeaconToCloud = function(beacon)
+exports.addBeaconToCloud = function(beacon, init)
 {
-  Ti.API.info('adding beacon to cloud', beacon.name);
+  if (init == null) init = false;
+
+  // sanitize beacon
+  Ti.API.info('beacon', beacon, init);
+  var model = new ModelBeacons().setter(beacon);
+  Ti.API.info('model', model);
+  beacon = model.getter();
+  Ti.API.info('sanitized', beacon);
+
+  // avoid duplicates
+  //if (_.findWhere(new BeaconHelper().localBeaconIds, beacon._id))
+  if (new BeaconHelper().userBeaconExistsById(beacon._id) === true && init===false)
+  {
+    Ti.API.info('duplicate', beacon, 'getting out!');
+    return;
+  }
+  else if (init===false)
+  {
+    // add to array
+    Ti.API.info('beaconCloud addUserBeacon', beacon);
+    var userBeacon = new ModelUserBeacons().setter();
+    userBeacon.beacon = beacon._id;
+    config.user.beacons.push(userBeacon.getter());
+    //new BeaconHelper().addUserBeacon(beacon);
+  }
+
+  //beacon.
+  Ti.API.info('adding beacon to cloud', beacon.name, JSON.stringify(beacon));
 
   var textView = $.UI.create('View',
   {
@@ -24,10 +63,11 @@ exports.addBeaconToCloud = function(beacon)
 
   textView.add(text);
   $.view.add(textView);
-  Ti.API.info(':', text, textView, $.view.children.length);
+  //Ti.API.info(':', text, textView, $.view.children.length);
 
   // dispatch beacon change event
-  $.view.fireEvent("beaconAddEvent", {beacon: beacon});
+  if (init === false)
+    config.views.index.fireEvent("beaconAddEvent", {beacon: beacon});
 };
 
 function beaconClickHandler(e)
