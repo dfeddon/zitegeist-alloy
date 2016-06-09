@@ -1,4 +1,5 @@
 var config = require("singleton-config");
+var RefreshToken = require("api.refreshToken");
 //var Crypto = require("platform-titanium/core/node_modules/cryptojs/cryptojs").Crypto;
     ////////////////////////////
     // api wrapper
@@ -213,10 +214,29 @@ ApiService.prototype.api = function(method, route, data, callback)
     {
         Ti.API.info("Server Returned Error", e);
 
-        Ti.API.info("===============================");
-        Ti.API.info("===============================");
+        if (e.code.toString() == "401" && config.refreshToken)
+        {
+            Ti.API.info('attempting to refresh token');
+            // refresh token
+            var refreshToken = new RefreshToken().update(config.refreshToken, "this_is_my_id", function(err, response)
+            {
+                Ti.API.info('refresh RESPONSE', response);
 
-        return callback(e, null);
+                // update token and refreshToken values
+                config.token = response.token;
+                config.refreshToken = response.refreshToken;
+
+                // retry original api call
+                return _this.api(method, route, data, callback);
+            });
+        }
+        else
+        {
+            Ti.API.info("===============================");
+            Ti.API.info("===============================");
+
+            return callback(e, null);
+        }
     };
     if (encrypting === true)
     {
