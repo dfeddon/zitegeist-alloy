@@ -2,7 +2,7 @@
 	<Window class="container" onOpen="openHandler">
 
 		<!-- navigation bar -->
-		<View id="navigationBar" top="0" height="0" visible="false" backgroundColor="#2775aa" bubbleParent="true" layout="horizontal">
+		<View id="navigationBar" top="0" height="0" visible="false" bubbleParent="true" layout="horizontal">
 
 			<View width="Ti.UI.FILL" layout="horizontal">
 
@@ -35,30 +35,30 @@
 		</View>
 
 		<!-- footer -->
-		<View id="footerBar" bottom="0" height="0" width="100%" visible="false" backgroundColor="#2C3E50" bubbleParent="true" layout="horizontal">
+		<View id="footerBar" bottom="0" height="0" width="100%" visible="false" bubbleParent="true" layout="horizontal">
 
 			<!-- messages -->
 			<View id="messagingView" width="30" height="30" left="5">
-				<Button id="messaging" width="30" height="30" image="/images/notifications-icon.png" onTouchend="messagingTouchEndHandler"></Button>
+				<Button id="messaging" width="30" height="30" tintColor="#5682b2" image="/images/notifications-icon.png" onTouchend="messagingTouchEndHandler"></Button>
 				<Label id="messagesLabel" left="12" width="30" height="30" text="0"></Label>
 			</View>
 
 			<View id="creditsView" left="15" width="100" layout="vertical">
-				<Label id="creditsHeader" width="100" top="2" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="Credits" color="#716e71"></Label>
+				<Label id="creditsHeader" width="100" top="2" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="CREDITS"></Label>
 				<!-- <View borderColor="aqua" width="Ti.UI.FILL"> -->
 					<!-- <View borderColor="pink" layout="horizontal" top="0" width="Ti.UI.SIZE"> -->
 						<!-- <ImageView width="15" height="15" image="/images/zitegeist-credits.png"></ImageView> -->
-						<Label id="creditsText" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="1,550" color="white"></Label>
+						<Label id="creditsText" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="1,550"></Label>
 					<!-- </View> -->
 				<!-- </View> -->
 			</View>
 
 			<View id="zitegeistView" left="5%" width="100" layout="vertical">
-				<Label id="zitegeistHeader" width="75" top="2" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="Zitegeist" color="#716e71"></Label>
-				<Label id="zitegeistText" width="75" top="0" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="204" color="white"></Label>
+				<Label id="zitegeistHeader" width="75" top="2" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="FAME"></Label>
+				<Label id="zitegeistText" width="75" top="0" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="204"></Label>
 			</View>
 
-			<ImageView id="userImage" width="30" height="30" top="5" left="5" image="/images/matt-bloom-circle.png" onTouchend="myProfileTouchEndHandler"></ImageView>
+			<ImageView id="userImage" width="30" height="30" borderRadius="15" top="5" left="5" image="" onTouchend="myProfileTouchEndHandler"></ImageView>
 
 		</View>
 

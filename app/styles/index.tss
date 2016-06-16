@@ -17,6 +17,14 @@
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
 }
+"#navigationBar":
+{
+  backgroundColor: "#2b5e93"
+}
+"#footerBar":
+{
+  backgroundColor: "#2b5e93"
+}
 "#menuButton":
 {
 }
@@ -27,30 +35,31 @@
 "#creditsHeader":
 {
   font: {fontSize: 14, fontFamily: "LeagueGothic-Regular"},
+  color: "#5682b2"
 }
 "#creditsText":
 {
   font: {fontSize: 16, fontFamily: "LeagueGothic-Regular"},
-  //backgroundColor: "white",
+  color: "#12aaeb",
   paddingLeft: 5,
   paddingRight: 5
 }
 "#zitegeistHeader":
 {
   font: {fontSize: 14, fontFamily: "LeagueGothic-Regular"},
-  //backgroundColor: "white",
+  color: "#5682b2",
   paddingLeft: 5,
   paddingRight: 5
 }
 "#zitegeistText":
 {
   font: {fontSize: 16, fontFamily: "LeagueGothic-Regular"},
-  //backgroundColor: "white",
+  color: "#12aaeb",
   paddingLeft: 5,
   paddingRight: 5
 }
 "#messagesLabel":
 {
-  color: "yellow",
-  font: {fontSize: 10, fontFamily: "SFUIDisplay-Light"},
+  color: "white",
+  font: {fontSize: 10, fontFamily: "SFUIDisplay-Medium"},
 }

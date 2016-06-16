@@ -10,6 +10,10 @@ var currentView, addBeaconToCloud, loadedBeacons;
 
 var userBrand = getUserBrand();
 
+$.displayName.text = config.user.displayName;
+$.username.text = "@" + config.user.username;
+$.image.image = (config.user.image) ? config.user.image : 'https://s3.amazonaws.com/zeitgeist-media/users/icon-user.png';
+
 $.contentWrapper.addEventListener("myProfileViewChange", myProfileViewChangeHandler);
 $.contentWrapper.addEventListener("beaconCloudCreated", beaconCloudCreatedHandler);
 
@@ -114,13 +118,13 @@ function getUserBrand()
 
 function buttonsReset(source)
 {
-  $.campaigns.backgroundColor = "#2C3E50";
+  $.campaigns.backgroundColor = "#2b5e93";
   $.campaigns.color = "white";
-  $.zeitgeist.backgroundColor = "#2C3E50";
+  $.zeitgeist.backgroundColor = "#2b5e93";
   $.zeitgeist.color = "white";
-  $.ranks.backgroundColor = "#2C3E50";
+  $.ranks.backgroundColor = "#2b5e93";
   $.ranks.color = "white";
-  $.beacons.backgroundColor = "#2C3E50";
+  $.beacons.backgroundColor = "#2b5e93";
   $.beacons.color = "white";
 }
 function beaconsClickHandler(e)

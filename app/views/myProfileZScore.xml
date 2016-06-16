@@ -10,7 +10,7 @@
     </View>
 
     <!-- Chart -->
-    <View id="chartView" top="40" width="100%" height="100%" backgroundColor="white">
+    <View id="chartView" top="40" width="100%" height="100%" backgroundColor="transparent">
       <Require type="view" src="zScoreChart" id="chart"/>
     </View>
 

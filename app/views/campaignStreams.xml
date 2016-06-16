@@ -1,7 +1,7 @@
 <Alloy>
   <View top="0">
     <View id="container" top="0" width="100%" height="100%" backgroundColor="gray" onPostlayout="postLayoutHandler" bubbleParent="true">
-      <View layout="vertical" width="100%" top="0" height="100%" backgroundColor="gray" bubbleParent="true">
+      <View id="body" layout="vertical" width="100%" top="0" height="100%" bubbleParent="true">
 
         <!-- campaigns list view -->
         <View left="0" right="0" top="0" width="Ti.UI.SIZE" bottom="0" backgroundColor="transparent" bubbleParent="true">

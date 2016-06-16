@@ -11,26 +11,11 @@ function Beacon()
     Ti.API.info("Beacon constructor");
 }
 
-// LoginVO.prototype._data =
-// {
-    // email: null,
-    // password: null,
-    // role: null,
-    // error: null,
-    // loginResult: new LoginResultVO()
-// };
-
 Beacon.prototype.setter = function(obj)
 {
     for (var prop in obj)
     {
         this[prop] = obj[prop];
-
-        // if (prop == "email" || prop == "role")
-        // {
-        //     Ti.API.info("Beacon setter", prop, obj[prop]);
-        //     //Ti.App.Properties.setString("Beacon_" + obj[prop]);
-        // }
     }
     Ti.API.info("Beacon setter", this);
     return this;
@@ -47,7 +32,7 @@ Beacon.prototype.getter = function()
             obj[prop] = this[prop];
     }
 
-    return obj;//._data;
+    return obj;
 };
 
 module.exports = Beacon;

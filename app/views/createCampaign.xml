@@ -1,9 +1,12 @@
 <Alloy>
   <View top="0" id="container" layout="vertical" height="100%" onPostlayout="postLayoutHandler" bubbleParent="true" backgroundColor="white">
 
-    <View width="100%" height="Ti.UI.SIZE" backgroundColor="#2C3E50" layout="horizontal">
-      <Button id="standardButton" width="50%" title="Standard Campaign" onClick="typeClickHandler"/>
-      <Button id="advancedButton" width="50%" title="Advanced Campaign" onClick="typeClickHandler"/>
+    <View width="100%" height="Ti.UI.SIZE" backgroundColor="#2b5e93">
+      <!-- <Button id="standardButton" width="50%" title="Standard Campaign" onClick="typeClickHandler"/>
+      <Button id="advancedButton" width="50%" title="Advanced Campaign" onClick="typeClickHandler"/> -->
+      <Label id="cost" left="15" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">Total Cost:</Label>
+      <Label left="80" textAlign="Ti.UI.TEXT_ALIGNMENT_LEFT" color="white">0 credits</Label>
+      <Button id="preview" right="15" title="" />
     </View>
 
     <Require type="view" src="campaignBuilder" id="campaignBuilderView"/>

@@ -23,9 +23,10 @@ RefreshToken.prototype.update = function(token, clientId, callback)
         //config.token = this.responseText.token;
         //config.refreshToken = this.responseText.refreshToken;
 
-        if (this.responseText != null)
-            jsonResponse = JSON.parse(this.responseText);
-        else console.log('response is NULL');
+        //if (this.responseText != null)
+        jsonResponse = JSON.parse(this.responseText);
+        //else console.log('response is NULL');
+
         return callback(null, jsonResponse);
     };
 

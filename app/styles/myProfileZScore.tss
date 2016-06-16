@@ -1,3 +1,7 @@
+"#container":
+{
+  backgroundColor: "#214f7e"
+}
 "#trendDay":
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},

@@ -1,3 +1,7 @@
+"#container":
+{
+  backgroundColor: "#214f7e"
+}
 "#bronzeLabel":
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},

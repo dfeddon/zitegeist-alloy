@@ -1,103 +1,100 @@
 <Alloy>
-  <ScrollView id="scrollView" layout="vertical" left="0" right="0" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" top="0" bottom="0" backgroundColor="#2775aa" onPostlayout="postLayoutHandler">
+  <ScrollView id="scrollView" layout="vertical" left="0" right="0" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" top="0" bottom="0" onPostlayout="postLayoutHandler">
 
   <!-- <View top="10" left="15" right="15" height="Ti.UI.SIZE" backgroundColor="transparent" onPostlayout="postLayoutHandler"> -->
 
     <!-- Teaser -->
-    <View id="teaser" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
-      <Label top="10" left="0">TEASER</Label>
-      <TextArea top="10" left="0" right="0" height="100"></TextArea>
+    <View class="viewBacker">
+      <View id="teaser" class="viewUI">
+        <Label class="header">TEASER</Label>
+        <TextArea top="10" left="10" right="10" height="100" color="black" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5"></TextArea>
+      </View>
     </View>
 
-    <!-- Options -->
-    <View id="options" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
-      <Label top="10" left="0">OPTIONS</Label>
-
-      <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
-        <Switch left="10" value="false"></Switch>
-        <Label left="10">Include Media?</Label>
-        <!-- <ImageView left="50" width="50" height="50"></ImageView> -->
+    <!-- Reach -->
+    <View class="viewBacker">
+      <View id="reach" class="viewUI">
+        <Label class="header">REACH</Label>
+        <View top="10" left="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+          <Label left="0">Max Respondents</Label>
+          <Label class="creditcosts" left="10">+1 CPR > 250</Label>
+        </View>
+        <TextField left="10" top="10" width="100" value="250" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5" textAlign="Ti.UI.TEXT_ALIGNMENT_LEFT"></TextField>
       </View>
+    </View>
 
-      <View id="privatize" top="10" left="10" right="15" layout="horizontal" height="Ti.UI.SIZE" isAdvanced="true">
-        <Switch left="0" value="false"></Switch>
-        <Label left="10">Privatize Results?</Label>
+
+    <!-- Options -->
+    <View class="viewBacker">
+      <View id="options" class="viewUI">
+        <Label class="header">OPTIONS</Label>
+
+        <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+          <Switch left="10" value="false"></Switch>
+          <Label left="10">Include Media?</Label>
+          <!-- <ImageView left="50" width="50" height="50"></ImageView> -->
+        </View>
+
+        <View id="privatize" top="10" left="10" right="15" layout="horizontal" height="Ti.UI.SIZE" isAdvanced="true">
+          <Switch left="0" value="false"></Switch>
+          <Label left="10">Privatize Results?</Label>
+          <Label class="creditcosts" left="10">+500 credits</Label>
+        </View>
       </View>
     </View>
 
     <!-- Schedule -->
-    <View id="schedule" isAdvanced="true" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
-      <Label top="10" left="0">SCHEDULE</Label>
-    </View>
+    <!-- <View id="schedule" isAdvanced="true" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
+      <Label class="header" top="10" left="0">SCHEDULE</Label>
+    </View> -->
 
     <!-- Audience -->
-    <View id="audience" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
+    <View class="viewBacker">
+    <View id="audience" class="viewUI">
 
-      <Label top="10" left="0">AUDIENCE</Label>
-      <View top="15" layout="horizontal" width="100%" height="Ti.UI.SIZE">
-        <Switch left="10" value="true"></Switch>
-        <Label left="10">Broadcast Beacons?</Label>
+      <Label class="header">ENGAGEMENT</Label>
+
+      <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+        <Label left="10">Method</Label>
+        <Label id="audienceMethod" left="10" text="Beacons" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5" onTouchend="changeAudienceHandler"></Label>
+        <!-- <ImageView left="50" width="50" height="50"></ImageView> -->
       </View>
-      <Button left="15" top="15">+ ADD BEACONS</Button>
-      <View top="15" layout="horizontal" width="100%" height="Ti.UI.SIZE">
-        <Switch left="10" value="false" enabled="false"></Switch>
-        <Label left="10">Invite Friends?</Label>
-      </View>
-    <!-- </View> -->
-      <!-- beacons textfield -->
-      <!--<View left="15" right="15" top="10" width="Ti.UI.SIZE" height="Ti.UI.SIZE">
-        <Require type="view" src="beaconsTextField" id="beaconsText"/>
-      </View>-->
-      <!-- Ranked -->
-      <View id="ranked" isAdvanced="true" top="10" left="15" right="15" layout="horizontal" height="Ti.UI.SIZE">
-        <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
-          <Switch left="10" value="false"></Switch>
-          <Label left="10">Ranked?</Label>
-        </View>
-        <View id="ranks" isAdvanced="true" top="10" left="10" right="10" layout="vertical" height="Ti.UI.SIZE">
-          <View id="ranked" top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
-            <Switch left="20" value="false"></Switch>
-            <Label left="10">Obsidian</Label>
-          </View>
-          <View id="ranked" isAdvanced="true" top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
-            <Switch left="20" value="false"></Switch>
-            <Label left="10">Gold</Label>
-          </View>
-          <View id="ranked" isAdvanced="true" top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
-            <Switch left="20" value="false"></Switch>
-            <Label left="10">Silver</Label>
-          </View>
-          <View id="ranked" isAdvanced="true" top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
-            <Switch left="20" value="false"></Switch>
-            <Label left="10">Bronze</Label>
-          </View>
-        </View> <!-- end ranks -->
-      </View> <!-- end ranked -->
+      <!-- <Picker id="picker" top="0" selectionIndicator="true" useSpinner="false">
+          <PickerColumn id="column1">
+              <PickerRow title="Global"/>
+              <PickerRow title="Beacons"/>
+              <PickerRow title="Ranked"/>
+              <PickerRow title="Friends"/>
+          </PickerColumn>
+      </Picker> -->
+
     </View> <!-- end audience -->
-
-    <!-- Reach -->
-    <View id="reach" isAdvanced="true" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
-      <Label top="10" left="0">REACH</Label>
-    </View>
+  </View>
 
     <!-- Featured -->
-    <View id="featured" isAdvanced="true" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
-      <Label top="10" left="0">FEATURED</Label>
+    <View class="viewBacker">
+      <View id="featured" class="viewUI">
+        <Label class="header">FEATURED</Label>
+      </View>
     </View>
 
     <!-- Demographics -->
-    <View id="demographics" isAdvanced="true" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
-      <Label top="10" left="0">DEMOGRAPHICS</Label>
+    <View class="viewBacker">
+      <View id="demographics" class="viewUI">
+        <Label class="header">DEMOGRAPHICS</Label>
+      </View>
     </View>
 
     <!-- Rewards -->
-    <View id="rewards" isAdvanced="true" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
-      <Label top="0" left="0">REWARDS</Label>
+    <View class="viewBacker">
+      <View id="rewards" class="viewUI">
+        <Label class="header">REWARDS</Label>
+      </View>
     </View>
 
     <!-- Metrics -->
     <View id="metrics" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
-      <Label top="10" left="0">METRICS</Label>
+      <Label class="header" top="10" left="0">METRICS</Label>
       <View id="metricTabs" top="15" height="50" width="100%" layout="horizontal">
         <Button id="questionBtn">1</Button>
         <Button id="questionBtn" enabled="false" color="gray">2</Button>

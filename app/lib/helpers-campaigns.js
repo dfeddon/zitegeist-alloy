@@ -70,4 +70,26 @@ CampaignHelper.prototype.searchCampaignsByBeaconIds = function(callback)
   });
 };
 
+CampaignHelper.prototype.searchCampaignsByBrandId = function(id, callback)
+{
+  Ti.API.info('searchCampaignsByBrandId', id);
+
+  new ApiService().api("get", "campaigns/brand/" + id, {}, function(err, jsonResponse)
+  {
+    if (err)
+    {
+      Ti.API.info('error', err);
+      //campaignListView.data = lastdata;
+    }
+    else
+    {
+      Ti.API.info('success');//, jsonResponse);
+      new CampaignHelper().setter(jsonResponse);
+      Ti.API.info('campaigns', new CampaignHelper().getCampaigns());
+      callback(new CampaignHelper().getCampaigns());
+      //campaignListView.addCampaignsFromBeacons(jsonResponse);
+    }
+  });
+}
+
 module.exports = CampaignHelper;

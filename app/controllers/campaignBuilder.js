@@ -1,9 +1,32 @@
+var ViewHelper = require("helpers.view");
+var ModalPickerComponent = require("component.modalPicker");
+
 var toggleBoolean = false;
+
+//new ViewHelper().hideElement($.addBeacons);
 
 function postLayoutHandler(e)
 {
   Ti.API.info('campaignBuilderHandler');
   //advancedToggle(false);
+}
+
+function changeAudienceHandler(e)
+{
+  Ti.API.info('changeAudienceHandler', e);
+  var rows = [
+    { title:"Beacons", value:"beacons"},
+    { title:"Ranked", value:"ranked"},
+    { title:"Friends", value:"friends"},
+    { title:"Global", value:"global"}
+  ];
+  new ModalPickerComponent().createComponent(rows, "Audience Type", 0, audienceSelectedHandler);
+}
+
+function audienceSelectedHandler(e)
+{
+  Ti.API.info('audienceSelectedHandler', e);
+  $.audienceMethod.text = e.title;
 }
 
 exports.advancedToggleBool = function(bool)

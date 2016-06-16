@@ -1,6 +1,8 @@
+Ti.API.info('args:', $.args);
 $.teaser.text = $.args.teaser || '';
 $.displayName.text = $.args.brand.owner.displayName || 'I Have No Name';
 $.username.text = "@" + $.args.brand.owner.username || '@nonameatall';
+$.image.image = $.args.brand.owner.image || 'https://s3.amazonaws.com/zeitgeist-media/users/icon-user.png';
 
 function clickHandler(e)
 {

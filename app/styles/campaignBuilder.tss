@@ -5,8 +5,8 @@
 }
 "Label":
 {
-  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
-  color: "white"
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "#2d2f2f"
 }
 "TextField":
 {
@@ -23,10 +23,49 @@
   paddingLeft: 5,
   paddingRight: 5
 }
-"#headerLbl":
+".viewBacker":
 {
+  top: 15,
+  left: 15,
+  right: 15,
+  height: Ti.UI.SIZE,
   backgroundColor: "white",
-  color: "black"
+  borderRadius: 5
+}
+".viewUI":
+{
+  top:5,
+  left:5,
+  right:5,
+  bottom:15,
+  layout:"vertical",
+  height:Ti.UI.SIZE,
+  backgroundColor:"white",
+  borderRadius:5
+}
+"#scrollView":
+{
+  backgroundColor:"#ebf0f3"
+}
+".creditcosts":
+{
+  font: {fontSize: 12, fontFamily: "SFUIDisplay-Regular"},
+  color: "#46cb8c"
+}
+".header":
+{
+  //width: "100%",
+  font: {fontSize: 12, fontFamily: "SFUIDisplay-Medium"},
+  textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+  //backgroundColor: "#2b5e93",
+  color: "black",
+  top: 10,
+  left: 10
+}
+"#audienceMethod":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  color: "#2d2f2f"
 }
 "#questionBtn":
 {

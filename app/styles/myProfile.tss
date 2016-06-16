@@ -1,5 +1,5 @@
 ".container": {
-	backgroundColor:"white"
+	backgroundColor:"#214f7e"
 }
 
 "Button":
@@ -29,26 +29,26 @@
   font: {fontSize: 11, fontFamily: "SFUIDisplay-Medium"},
   color: "white",
   backgroundSelectedColor: "black",
-  backgroundColor: "#2C3E50"
+  backgroundColor: "#2b5e93"
 }
 "#zeitgeist":
 {
   font: {fontSize: 11, fontFamily: "SFUIDisplay-Medium"},
   color: "white",
   backgroundSelectedColor: "black",
-  backgroundColor: "#2C3E50"
+  backgroundColor: "#2b5e93"
 }
 "#ranks":
 {
   font: {fontSize: 11, fontFamily: "SFUIDisplay-Medium"},
   color: "white",
   backgroundSelectedColor: "black",
-  backgroundColor: "#2C3E50"
+  backgroundColor: "#2b5e93"
 }
 "#beacons":
 {
   font: {fontSize: 11, fontFamily: "SFUIDisplay-Medium"},
   color: "white",
   backgroundSelectedColor: "black",
-  backgroundColor: "#2C3E50"
+  backgroundColor: "#2b5e93"
 }

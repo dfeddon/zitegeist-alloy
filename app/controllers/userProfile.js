@@ -9,6 +9,8 @@ var isFollowing = new UserHelper().isFollowing(brand._id);
 Ti.API.info('brand', brand, isFollowing);
 $.displayName.text = brand.owner.displayName;
 $.username.text = "@" + brand.owner.username;
+Ti.API.info('user profile image', brand.owner.image);
+$.image.image = (brand.owner.image) ? brand.owner.image : 'https://s3.amazonaws.com/zeitgeist-media/users/icon-user.png';
 
 function postLayoutHandler(e)
 {

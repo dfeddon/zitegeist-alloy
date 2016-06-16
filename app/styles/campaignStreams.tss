@@ -19,3 +19,7 @@
   paddingLeft: 5,
   paddingRight: 5
 }
+"#body":
+{
+  backgroundColor: "#214f7e"
+}

@@ -3,7 +3,7 @@
     <View id="container" width="100%" top="1" bottom="1" height="Ti.UI.SIZE" backgroundColor="#fff" borderRadius="0" borderWidth="5" borderColor="#fff" onClick="clickHandler">
       <!-- User Pic -->
       <!-- forced zIndex allows profile clicks to take precedence over campaign click -->
-      <ImageView zIndex="100" top="10" left="10" width="50" height="50" image="/images/matt-bloom-circle.png" onClick="profileClickHandler"></ImageView>
+      <ImageView id="image" zIndex="100" top="10" left="10" width="50" height="50" borderRadius="25" image="" onClick="profileClickHandler"></ImageView>
       <!-- Top Bar -->
       <View top="5" layout="horizontal" height="Ti.UI.SIZE">
         <!-- Display Name -->
@@ -32,7 +32,7 @@
         <!-- inner circle -->
         <!-- <ImageView bottom="4" width="8" height="8" borderRadius="5" backgroundColor="#050505" borderColor="#050505"/> -->
         <ImageView width="40" height="8" left="0" borderRadius="5" backgroundColor="#a5aaa7" borderColor="#a5aaa7"/>
-        <ImageView width="20" height="4" left="5" borderRadius="0" backgroundColor="#050505" borderColor="#050505"/>
+        <ImageView width="20" height="4" left="5" borderRadius="0" backgroundColor="orange" borderColor="orange"/>
         <!-- progress -->
         <!-- <ImageView bottom="8" height="20" width="4" borderRadius="4" backgroundColor="#050505" borderColor="#050505"/> -->
       </View>

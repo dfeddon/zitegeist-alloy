@@ -216,7 +216,7 @@ ApiService.prototype.api = function(method, route, data, callback)
 
         if (e.code.toString() == "401" && config.refreshToken)
         {
-            Ti.API.info('attempting to refresh token');
+            Ti.API.info('attempting to refresh token...');
             // refresh token
             var refreshToken = new RefreshToken().update(config.refreshToken, "this_is_my_id", function(err, response)
             {

@@ -30,8 +30,8 @@ function go()
   var gpoint = (screenwidth - 20) / points.length;
   var startY = (screenheight / 3);// - 100; // 100 = bottomBar height
 
-  var dotSize = 10;
-  if (points.length > 7) dotSize = 7;
+  var dotSize = 20;//10;
+  if (points.length > 7) dotSize = 14;//7;
 
   var lines = [];
 
@@ -46,7 +46,7 @@ function go()
     {
       newline.x1 = startX;
       newline.y1 = startY;
-      newline.color = "lightgray";//"green";
+      newline.color = "#13a8e8";//"green";
     }
     else
     {
@@ -75,8 +75,8 @@ function go()
     if (count > 0)
     {
       if (newline.y2 < lastline.y2)
-        newline.color = "lightgray";//"green";
-      else newline.color = "lightgray";//"red";
+        newline.color = "#13a8e8";//"green";
+      else newline.color = "#13a8e8";//"red";
     }
 
     line = Line.createLine(newline);
@@ -88,7 +88,7 @@ function go()
     if (count === 0)
       dotAdjust = dotSize / 4;//2.5;
     else dotAdjust = dotSize / 2;//5;
-    dot = Ti.UI.createView({zIndex:1000, width:dotSize, height:dotSize, borderRadius:dotSize/2, backgroundColor:"lightgray", left:newline.x2-dotAdjust, top:newline.y2-dotAdjust});
+    dot = Ti.UI.createView({zIndex:1000, width:dotSize, height:dotSize, borderRadius:dotSize/2, backgroundColor:"#13a8e8", left:newline.x2-dotAdjust, top:newline.y2-dotAdjust});
     $.container.add(dot);
 
     lastline = _.clone(newline);

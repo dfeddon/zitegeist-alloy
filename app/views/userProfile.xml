@@ -7,7 +7,7 @@
 
         <!-- User Pic -->
         <View top="10" left="10" width="Ti.UI.SIZE" height="Ti.UI.SIZE" layout="vertical">
-          <ImageView width="50" height="50" image="/images/matt-bloom-circle.png"></ImageView>
+          <ImageView id="image" width="50" height="50" borderRadius="25" image=""></ImageView>
           <!-- Join Button -->
           <Button id="joinButton" top="10" width="50" title="JOIN" backgroundColor="#03710e"></Button>
         </View>

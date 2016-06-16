@@ -14,6 +14,8 @@ config.endpoint = "http://localhost:1337";
 
 config.colors = {};
 config.colors.primaryBG = "#03a9f4";
+config.colors.headerBG = "#2b5e93";
+config.colors.bodyBG = "#214f7e";
 
 config.navigation = {};
 config.viewHelper = {};

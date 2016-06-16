@@ -6,7 +6,7 @@
 "Button":
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
-  color: "yellow"
+  color: "white"
 }
 "Label":
 {
@@ -16,6 +16,16 @@
 "TextField":
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+}
+"#cost":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "white"
+}
+"#preview":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "white"
 }
 "#standardButton":
 {

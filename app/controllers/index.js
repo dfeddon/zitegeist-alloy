@@ -175,6 +175,9 @@ function navChangeEvent(e)
     fromModal = e.fromModal;
     toModal = e.toModal;
 
+    // store event
+    config.navigation.current = e;
+
     if (e.toModal === true && e.fromModal === false)
     {
       $.contentModal.show();
@@ -224,18 +227,21 @@ function navChangeEvent(e)
               //$.contentWrapper.remove($.getView("onboardSplash"));
               Ti.API.info('cview', currentView);
             }
+
+            // set user image
+            $.userImage.image = config.user.image;
         break;
     }
     switch(e.to)
     {
       case "campaignStreams":
-        $.headerText.text = "Campaigns";
+        $.headerText.text = "CAMPAIGNS";
         $.createCampaignButton.show();// new ViewHelper().showElement($.createCampaignButton);
         $.footerBar.show();// new ViewHelper().showElement($.footerBar);
       break;
 
       case "userProfile":
-        $.headerText.text = "Profile";
+        $.headerText.text = "PROFILE";
         $.menuButton.hide();// new ViewHelper().hideElement($.menuButton);
         $.backButton.show();// new ViewHelper().showElement($.backButton);
         $.createCampaignButton.hide();// new ViewHelper().hideElement($.createCampaignButton);
@@ -243,7 +249,7 @@ function navChangeEvent(e)
       break;
 
       case "myProfile":
-        $.headerText.text = "My Profile";
+        $.headerText.text = "MY PROFILE";
         $.menuButton.hide();// new ViewHelper().hideElement($.menuButton);
         $.backButton.show();// new ViewHelper().showElement($.backButton);
         $.createCampaignButton.show();// new ViewHelper().hideElement($.createCampaignButton);
@@ -251,7 +257,7 @@ function navChangeEvent(e)
       break;
 
       case "messagingView":
-        $.headerText.text = "Messages";
+        $.headerText.text = "MESSAGES";
         $.menuButton.hide();// new ViewHelper().hideElement($.menuButton);
         $.backButton.show();// new ViewHelper().showElement($.backButton);
         $.createCampaignButton.show();// new ViewHelper().hideElement($.createCampaignButton);
@@ -259,7 +265,7 @@ function navChangeEvent(e)
       break;
 
       case "surveyView":
-        $.headerText.text = "Consensus";
+        $.headerText.text = "CONSENSUS";
         $.menuButton.hide(); //new ViewHelper().hideElement($.menuButton);
         $.backButton.show(); //new ViewHelper().showElement($.backButton);
         $.createCampaignButton.hide(); //new ViewHelper().hideElement($.createCampaignButton);
@@ -267,7 +273,7 @@ function navChangeEvent(e)
       break;
 
       case "createCampaign":
-        $.headerText.text = "Publish";
+        $.headerText.text = "PUBLISH";
         $.menuButton.hide(); //new ViewHelper().hideElement($.menuButton);
         $.backButton.show(); //new ViewHelper().showElement($.backButton);
         $.createCampaignButton.hide(); //new ViewHelper().hideElement($.createCampaignButton);

@@ -8,16 +8,16 @@ function ViewHelper()
 ViewHelper.prototype.hideElement = function(element)
 {
   // first, store original dimensions
-  // var ele = {};
-  // ele.width = element.width;
-  // ele.height = element.height;
-  // ele.id = element.id;
-  // config.viewHelper.elements.push(ele);
+  var ele = {};
+  ele.width = element.width;
+  ele.height = element.height;
+  ele.id = element.id;
+  config.viewHelper.elements.push(ele);
   //
   // // now, mutate element
-  // element.width = 0;
-  // element.height = 0;
-  element.hide();
+  element.width = 0;
+  element.height = 0;
+  //element.hide();
 };
 
 ViewHelper.prototype.showElement = function(element)

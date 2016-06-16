@@ -39,3 +39,11 @@ overrode the settings with other TSS, XML, or JS settings:
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
 }
+"#ViewHeaderBlue":
+{
+  backgroundColor: "#2b5e93"
+}
+"#ViewBodyBlue":
+{
+  backgroundColor: "#214f7e"
+}
