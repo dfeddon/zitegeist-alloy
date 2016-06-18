@@ -1,28 +1,27 @@
 //var LoginResultVO = require("platform-titanium/core/models/loginresult.model");
 
-this.name = undefined;
-this.teaser = undefined;
-this.featuredType = 0;
-this.demographic = undefined;
-this.schedule = undefined;
-this.reports = [];
-this.metrics = [];
-this.beacons = [];
-this.userPermissions = [];
-
 function Campaign()
 {
     Ti.API.info("Campaign constructor");
+    this.name = undefined;
+    this.teaser = undefined;
+    this.engagementType = "beacons";
+    this.rewardsType = "none";
+    this.targetRanks = [];
+    this.featuredType = 0;
+    this.sample = 0;
+    this.isActive = false;
+    this.isComplete = false;
+    this.isPrivate = false;
+    this.brand = undefined;
+    this.suggested = [];
+    this.demographic = undefined;
+    this.schedule = undefined;
+    this.reports = [];
+    this.metrics = [];
+    this.beacons = [];
+    this.userPermissions = [];
 }
-
-// LoginVO.prototype._data =
-// {
-    // email: null,
-    // password: null,
-    // role: null,
-    // error: null,
-    // loginResult: new LoginResultVO()
-// };
 
 Campaign.prototype.setter = function(obj)
 {
@@ -42,7 +41,7 @@ Campaign.prototype.setter = function(obj)
 
 Campaign.prototype.getter = function()
 {
-    Ti.API.info("LoginVO getter", this);
+    //Ti.API.info("LoginVO getter", this);
     var obj = {};
     for (var prop in this)
     {

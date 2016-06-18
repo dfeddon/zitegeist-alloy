@@ -19,29 +19,10 @@
           <Label left="0">Max Respondents</Label>
           <Label class="creditcosts" left="10">+1 CPR > 250</Label>
         </View>
-        <TextField left="10" top="10" width="100" value="250" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5" textAlign="Ti.UI.TEXT_ALIGNMENT_LEFT"></TextField>
+        <TextField left="10" top="10" height="30" width="100" value="250" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5" textAlign="Ti.UI.TEXT_ALIGNMENT_LEFT"></TextField>
       </View>
     </View>
 
-
-    <!-- Options -->
-    <View class="viewBacker">
-      <View id="options" class="viewUI">
-        <Label class="header">OPTIONS</Label>
-
-        <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
-          <Switch left="10" value="false"></Switch>
-          <Label left="10">Include Media?</Label>
-          <!-- <ImageView left="50" width="50" height="50"></ImageView> -->
-        </View>
-
-        <View id="privatize" top="10" left="10" right="15" layout="horizontal" height="Ti.UI.SIZE" isAdvanced="true">
-          <Switch left="0" value="false"></Switch>
-          <Label left="10">Privatize Results?</Label>
-          <Label class="creditcosts" left="10">+500 credits</Label>
-        </View>
-      </View>
-    </View>
 
     <!-- Schedule -->
     <!-- <View id="schedule" isAdvanced="true" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
@@ -55,33 +36,97 @@
       <Label class="header">ENGAGEMENT</Label>
 
       <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
-        <Label left="10">Method</Label>
-        <Label id="audienceMethod" left="10" text="Beacons" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5" onTouchend="changeAudienceHandler"></Label>
-        <!-- <ImageView left="50" width="50" height="50"></ImageView> -->
+        <Label left="10" width="75">Method</Label>
+        <Button id="audienceMethod" class="buttonTap" index="0" left="10" width="Ti.UI.FILL" title="Beacons" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5" onTouchend="changeAudienceHandler"></Button>
       </View>
-      <!-- <Picker id="picker" top="0" selectionIndicator="true" useSpinner="false">
-          <PickerColumn id="column1">
-              <PickerRow title="Global"/>
-              <PickerRow title="Beacons"/>
-              <PickerRow title="Ranked"/>
-              <PickerRow title="Friends"/>
-          </PickerColumn>
-      </Picker> -->
+
+      <!-- beacons -->
+      <View id="methodBeacons" top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+        <Label left="10" width="75">Beacons</Label>
+        <Button id="tapBeaconsButton" left="10" title="Tap to Edit" class="addBeaconsButton" onTouchend="addBeacons"></Button>
+        <View id="beaconTags" top="10" left="10" width="Ti.UI.FILL" layout="horizontal" height="Ti.UI.SIZE" borderRadius="5" backgroundColor="transparent" onTouchend="addBeacons"></View>
+      </View>
+
+      <!-- beacons -->
+      <View id="methodRanked" top="10" layout="vertical" width="100%" height="Ti.UI.SIZE">
+        <!-- <Label left="10">Select Ranks</Label> -->
+        <View top="10" layout="horizontal" width="Ti.UI.FILL" height="Ti.UI.SIZE">
+          <View backgroundColor="transparent" width="25%" height="Ti.UI.SIZE">
+            <Button id="bronzeButton" class="rankedButton" onTouchend="rankedChangeHandler">B</Button>
+          </View>
+          <View backgroundColor="transparent" width="25%" height="Ti.UI.SIZE">
+            <Button id="silverButton" class="rankedButton" onTouchend="rankedChangeHandler">S</Button>
+          </View>
+          <View backgroundColor="transparent" width="25%" height="Ti.UI.SIZE">
+            <Button id="goldButton" class="rankedButton" onTouchend="rankedChangeHandler">G</Button>
+          </View>
+          <View backgroundColor="transparent" width="25%" height="Ti.UI.SIZE">
+            <Button id="obsidianButton" class="rankedButton" onTouchend="rankedChangeHandler">O</Button>
+          </View>
+        </View>
+        <!-- <Button left="10" title="Tap to add..." class="addBeaconsButton"></Button>
+        <View id="beaconTags" left="10" width="Ti.UI.FILL" layout="horizontal" height="Ti.UI.SIZE" borderRadius="5" backgroundColor="#eef7fa" borderColor="#eef7fa"></View> -->
+      </View>
 
     </View> <!-- end audience -->
   </View>
 
+  <!-- Options -->
+  <View class="viewBacker">
+    <View id="options" class="viewUI">
+      <Label class="header">OPTIONS</Label>
+
+      <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+        <Switch left="10" value="false"></Switch>
+        <Label left="10">Include Media</Label>
+        <!-- <ImageView left="50" width="50" height="50"></ImageView> -->
+      </View>
+
+      <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+        <Switch left="10" value="false"></Switch>
+        <Label left="10">Featured Campaign</Label>
+        <Label class="creditcosts" left="10">+5000 credits</Label>
+      </View>
+
+      <View id="privatize" top="10" left="10" right="15" layout="horizontal" height="Ti.UI.SIZE" isAdvanced="true">
+        <Switch left="0" value="false"></Switch>
+        <Label left="10">Privatize Results</Label>
+        <Label class="creditcosts" left="10">+1000 credits</Label>
+      </View>
+    </View>
+  </View>
+
+
     <!-- Featured -->
-    <View class="viewBacker">
+    <!-- <View class="viewBacker">
       <View id="featured" class="viewUI">
         <Label class="header">FEATURED</Label>
       </View>
-    </View>
+    </View> -->
 
     <!-- Demographics -->
     <View class="viewBacker">
       <View id="demographics" class="viewUI">
         <Label class="header">DEMOGRAPHICS</Label>
+
+        <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+          <Label left="10" width="75">Gender</Label>
+          <Button id="demoGender" class="buttonTap" index="0" left="10" width="Ti.UI.FILL" title="Any" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5" onTouchend="changeDemoGenderHandler"></Button>
+        </View>
+        <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+          <Label left="10" width="75">Age</Label>
+          <Button id="demoAge" class="buttonTap" index="0" left="10" width="Ti.UI.FILL" title="Any" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5" onTouchend="changeDemoAgeHandler"></Button>
+        </View>
+        <!-- <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+          <Label left="10" width="75">Locale</Label>
+          <Button id="demoLocale" class="buttonTap" index="0" left="10" width="Ti.UI.FILL" title="Any" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5" onTouchend="changeDemoLocaleHandler"></Button>
+        </View> -->
+        <View id="demoLocality" top="10" layout="horizontal" height="Ti.UI.SIZE" isAdvanced="true">
+          <Label left="10" width="75">My Locality</Label>
+          <Switch left="10" value="false"></Switch>
+          <!-- <Label class="creditcosts" left="10">+1000 credits</Label> -->
+        </View>
+
       </View>
     </View>
 
@@ -89,6 +134,22 @@
     <View class="viewBacker">
       <View id="rewards" class="viewUI">
         <Label class="header">REWARDS</Label>
+
+        <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+          <Label left="10" width="75">Type</Label>
+          <Button id="rewardsType" class="buttonTap" index="0" left="10" width="Ti.UI.FILL" title="None" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5" onTouchend="changeRewardsTypeHandler"></Button>
+        </View>
+
+        <View id="rewardsCreditsView" top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+          <Label left="10" width="75">CPR</Label>
+          <TextField id="rewardsCPR" left="10" width="50" height="30" value="0" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5"></TextField>
+        </View>
+
+        <View id="rewardsCouponView" top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+          <Label left="10" width="75">Display Text</Label>
+          <TextField id="rewardsDisplayText" left="10" width="Ti.UI.FILL" height="30" hintText="e.g. 30% off next purchase" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5"></TextField>
+        </View>
+
       </View>
     </View>
 

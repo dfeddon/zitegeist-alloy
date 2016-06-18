@@ -107,7 +107,7 @@ function refreshCampaignList()
 {
   Ti.API.info('index:refreshCampaignList');
   var beaconIds = new UserHelper().getUserBeaconIds();
-  Ti.API.info('beaconIds', beaconIds.toString());
+  Ti.API.info('beaconIds', beaconIds);//.toString());
   // search campaign for matching beacons
   // /campaigns/beacons/search/:ids
   new ApiService().api("get", "campaigns/beacons/search/" + beaconIds, {}, function(err, jsonResponse)

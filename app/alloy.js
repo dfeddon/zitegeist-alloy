@@ -21,6 +21,26 @@ config.navigation = {};
 config.viewHelper = {};
 config.viewHelper.elements = [];
 config.views = {};
+
+config.osname = Ti.Platform.osname;
+config.platform = {};
+config.platform.name = Titanium.Platform.name;
+config.platform.version = Ti.Platform.version;
+if (config.platform.name == "android")
+{
+    config.isDroid = true;
+    config.isIos = false;
+    config.deviceHeight = parseInt(Ti.Platform.displayCaps.platformHeight  / (Ti.Platform.displayCaps.logicalDensityFactor || 1), 10);
+    config.deviceWidth = parseInt(Ti.Platform.displayCaps.platformWidth  / (Ti.Platform.displayCaps.logicalDensityFactor || 1), 10);
+}
+else // iOS
+{
+    config.isIos = true;
+    config.isDroid = false;
+    config.deviceHeight = Ti.Platform.displayCaps.platformHeight;
+    config.deviceWidth = Ti.Platform.displayCaps.platformWidth;
+}
+
 // The contents of this file will be executed before any of
 // your view controllers are ever executed, including the index.
 // You have access to all functionality on the `Alloy` namespace.

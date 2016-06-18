@@ -17,6 +17,7 @@ ModalPickerComponent.prototype.createComponent = function(data, header, startInd
   var win = Ti.UI.createWindow(
   {
     backgroundColor: "#214f7e",
+    top: 22
     //opacity: 0.90
   });
 
@@ -76,21 +77,21 @@ ModalPickerComponent.prototype.createComponent = function(data, header, startInd
   /////////////////////////////////
   var doneButton = Ti.UI.createButton(
   {
-    width: "49%",
+    width: (config.deviceWidth / 2) - 7,
     height: 50,
     title: "DONE",
     color: "white",
     backgroundColor: "#03a9f4",
     font: {fontSize: 16, fontFamily: "SFUIDisplay-Medium"},
     broderColor: "black",
-    bottom: 0,
-    left: 0
+    bottom: 5,
+    left: 5
     //enabled: false
   });
 
   var cancelButton = Ti.UI.createButton(
   {
-    width: "49%",
+    width: (config.deviceWidth / 2) - 7,
     height: 50,
     title: "CANCEL",
     color: "white",
@@ -98,8 +99,8 @@ ModalPickerComponent.prototype.createComponent = function(data, header, startInd
     font: {fontSize: 16, fontFamily: "SFUIDisplay-Medium"},
     backgroundImage: 'none',
     boderColor: "black",
-    bottom: 0,
-    right: 0
+    bottom: 5,
+    right: 5
   });
 
   doneButton.addEventListener("click", function(e)

@@ -10,7 +10,7 @@
 }
 "TextField":
 {
-  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
   //backgroundColor: "white",
   paddingLeft: 5,
   paddingRight: 5
@@ -50,7 +50,8 @@
 ".creditcosts":
 {
   font: {fontSize: 12, fontFamily: "SFUIDisplay-Regular"},
-  color: "#46cb8c"
+  color: "#46cb8c",
+  right: 5
 }
 ".header":
 {
@@ -62,7 +63,7 @@
   top: 10,
   left: 10
 }
-"#audienceMethod":
+".buttonTap":
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
   color: "#2d2f2f"
@@ -74,4 +75,38 @@
   height: 40,
   backgroundColor: "#2C3E50",
   color: "white"
+}
+".addBeaconsButton":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  borderRadius:5,
+  backgroundColor:"#eef7fa",
+  borderColor:"#eef7fa",
+  color:"black",
+  width: Ti.UI.FILL
+}
+".rankedButton":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  borderRadius:25,
+  width: 50,
+  height: 50,
+  backgroundColor:"#eef7fa",
+  borderColor:"#eef7fa",
+  color:"white",
+  //width: "25%"
+}
+".beaconCloudItem":
+{
+  left: 5,
+  borderRadius: 5,
+  borderColor: "#eef7fa",
+  backgroundColor: "#eef7fa",
+  color: "#618ab7",
+  paddingLeft: 5,
+  paddingRight: 5,
+  editable: false,
+  width: Ti.UI.SIZE,
+  height: Ti.UI.SIZE,
+  font: {fontSize: 12, fontFamily: "SFUIDisplay-Light"},
 }

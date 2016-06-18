@@ -7,6 +7,7 @@ function ViewHelper()
 
 ViewHelper.prototype.hideElement = function(element)
 {
+  if (element.visible === false) return;
   // first, store original dimensions
   var ele = {};
   ele.width = element.width;
@@ -17,15 +18,22 @@ ViewHelper.prototype.hideElement = function(element)
   // // now, mutate element
   element.width = 0;
   element.height = 0;
-  //element.hide();
+  element.hide();
 };
 
 ViewHelper.prototype.showElement = function(element)
 {
-  // var ele = _.where(config.viewHelper.elements, {id:element.id});
-  // Ti.API.info('ele', ele, element);
-  // element.width = ele.width;
-  // element.height = ele.height;
+  if (element.visible === true) return;
+
+  var ele = _.where(config.viewHelper.elements, {id:element.id});
+  Ti.API.info('ele', ele, element);
+
+  element.width = ele.width;
+
+  if (ele.height > 0) // if value is explicit, assign
+    element.height = ele.height;
+  else element.height = Ti.UI.SIZE; // otherwise, go with size
+
   element.show();
 
 };
@@ -42,6 +50,6 @@ ViewHelper.prototype.getChildById = function(view, id)
       return child;
     }
   });
-}
+};
 
 module.exports = ViewHelper;
