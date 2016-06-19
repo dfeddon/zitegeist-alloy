@@ -21,7 +21,7 @@
           <!-- Location -->
           <Label id="location" top="5" width="100%" color="white" wordWrap="false" horizontalWrap="false" lines="1" maxLines="1" ellipsize="true" text="Los Angeles, CA"></Label>
           <!-- Link -->
-          <Label id="link" top="5" width="100%" color="#7cb2f2" wordWrap="false" horizontalWrap="false" lines="1" maxLines="1" ellipsize="true" text="http://www.myhomepage.com"></Label>
+          <Label id="link" top="5" width="100%" color="#03a9f4" wordWrap="false" horizontalWrap="false" lines="1" maxLines="1" ellipsize="true" text="http://www.myhomepage.com"></Label>
           <!-- Spacer -->
           <View id="spacer" height="20"></View>
         </View>

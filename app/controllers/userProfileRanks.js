@@ -17,6 +17,8 @@ function postLayoutHandler(e)
     isFollowing = new UserHelper().isFollowing(brand._id);
     Ti.API.info('following?', isFollowing, 'brand', brand);
 
+    if (isFollowing !== true) Ti.API.info('YOU ARE NOT FOLLOWING BRAND!');
+
     // add rank components
     var bronze = new RankProgressionComponent().createView("bronze");
     var silver = new RankProgressionComponent().createView("silver");

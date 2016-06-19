@@ -68,14 +68,14 @@
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
   color: "#2d2f2f"
 }
-"#questionBtn":
+/*"#questionBtn":
 {
   left: 10,
   width: 50,//Ti.UI.SIZE,
   height: 40,
   backgroundColor: "#2C3E50",
   color: "white"
-}
+}*/
 ".addBeaconsButton":
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},

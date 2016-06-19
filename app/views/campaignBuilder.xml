@@ -17,7 +17,7 @@
         <Label class="header">REACH</Label>
         <View top="10" left="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
           <Label left="0">Max Respondents</Label>
-          <Label class="creditcosts" left="10">+1 CPR > 250</Label>
+          <Label class="creditcosts" left="10">1 CPR > 250</Label>
         </View>
         <TextField left="10" top="10" height="30" width="100" value="250" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5" textAlign="Ti.UI.TEXT_ALIGNMENT_LEFT"></TextField>
       </View>
@@ -77,21 +77,21 @@
       <Label class="header">OPTIONS</Label>
 
       <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+        <Label left="10" width="120">Include Media</Label>
         <Switch left="10" value="false"></Switch>
-        <Label left="10">Include Media</Label>
         <!-- <ImageView left="50" width="50" height="50"></ImageView> -->
       </View>
 
       <View top="10" layout="horizontal" width="100%" height="Ti.UI.SIZE">
+        <Label left="10" width="120">Featured Campaign</Label>
         <Switch left="10" value="false"></Switch>
-        <Label left="10">Featured Campaign</Label>
-        <Label class="creditcosts" left="10">+5000 credits</Label>
+        <Label class="creditcosts" left="10">5000 credits</Label>
       </View>
 
       <View id="privatize" top="10" left="10" right="15" layout="horizontal" height="Ti.UI.SIZE" isAdvanced="true">
+        <Label left="10" width="120">Privatize Results</Label>
         <Switch left="0" value="false"></Switch>
-        <Label left="10">Privatize Results</Label>
-        <Label class="creditcosts" left="10">+1000 credits</Label>
+        <Label class="creditcosts" left="10">1000 credits</Label>
       </View>
     </View>
   </View>
@@ -154,19 +154,21 @@
     </View>
 
     <!-- Metrics -->
-    <View id="metrics" top="15" left="15" right="15" layout="vertical" height="Ti.UI.SIZE">
-      <Label class="header" top="10" left="0">METRICS</Label>
+    <!-- <View id="metrics" top="15" left="0" right="0" layout="vertical" height="Ti.UI.SIZE">
+      <Label class="header" top="10" left="15">METRICS</Label>
       <View id="metricTabs" top="15" height="50" width="100%" layout="horizontal">
         <Button id="questionBtn">1</Button>
         <Button id="questionBtn" enabled="false" color="gray">2</Button>
         <Button id="questionBtn" enabled="false" color="gray">3</Button>
         <Button id="questionBtn" enabled="false" color="gray">4</Button>
         <Button id="questionBtn" enabled="false" color="gray">5</Button>
-      </View>
-      <View id="questionView" width="100%" height="Ti.UI.SIZE">
+      </View> -->
+
+      <!-- <View id="questionView" width="100%" height="Ti.UI.SIZE"> -->
         <Require type="view" src="metricBuilder" id="metricBuilderView"/>
-      </View>
-    </View>
+      <!-- </View> -->
+
+    <!-- </View> -->
 
   <!-- </View> -->
 

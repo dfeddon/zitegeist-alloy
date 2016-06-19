@@ -4,13 +4,51 @@
 }
 "Label":
 {
-  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
-  color: "white"
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "#2d2f2f"
 }
 "TextField":
 {
-  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
-  backgroundColor: "white",
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  //backgroundColor: "white",
   paddingLeft: 5,
   paddingRight: 5
+}
+".viewBacker":
+{
+  top: 15,
+  left: 15,
+  right: 15,
+  height: Ti.UI.SIZE,
+  backgroundColor: "white",
+  borderRadius: 5
+}
+".viewUI":
+{
+  top:5,
+  left:5,
+  right:5,
+  bottom:15,
+  layout:"vertical",
+  height:Ti.UI.SIZE,
+  backgroundColor:"white",
+  borderRadius:5
+}
+".header":
+{
+  //width: "100%",
+  font: {fontSize: 12, fontFamily: "SFUIDisplay-Medium"},
+  textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+  //backgroundColor: "#2b5e93",
+  color: "black",
+  top: 10,
+  left: 10
+}
+".questionBtn":
+{
+  left: 10,
+  width: 50,//Ti.UI.SIZE,
+  height: 40,
+  backgroundColor: "#2C3E50",
+  color: "white"
 }

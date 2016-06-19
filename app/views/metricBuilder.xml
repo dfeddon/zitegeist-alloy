@@ -1,17 +1,33 @@
 <Alloy>
-  <View width="100%" height="Ti.UI.SIZE" layout="vertical" backgroundColor="transparent">
+  <View left="0" right="0" top="15" bottom="0" layout="vertical" backgroundColor="transparent">
 
-    <View id="question" top="10" layout="vertical" height="Ti.UI.SIZE">
-      <Label left="0" top="10">QUESTION</Label>
-      <TextArea left="0" top="10" width="100%" height="100"></TextArea>
+    <Label class="header" top="0" left="15">METRICS</Label>
+    <View id="metricTabs" top="15" left="15" right="15" height="50" layout="horizontal">
+      <Button class="questionBtn">1</Button>
+      <Button class="questionBtn" enabled="false" color="gray">2</Button>
+      <Button class="questionBtn" enabled="false" color="gray">3</Button>
+      <Button class="questionBtn" enabled="false" color="gray">4</Button>
+      <Button class="questionBtn" enabled="false" color="gray">5</Button>
     </View>
 
-    <View id="answers" top="15" layout="vertical" height="Ti.UI.SIZE">
-      <Label left="0" top="10">ANSWERS</Label>
+    <View class="viewBacker">
+      <View id="question" class="viewUI">
+      <!-- <View id="question" top="10" layout="vertical" height="Ti.UI.SIZE"> -->
+        <Label class="header">QUESTION</Label>
+        <TextArea top="10" right="10" left="10" height="100" backgroundColor="#eef7fa" borderColor="#eef7fa" borderRadius="5"></TextArea>
+      </View>
+    </View>
 
-      <View top="15" width="100%" layout="horizontal">
-        <Switch left="0" value="false"></Switch>
-        <Label left="0" left="10">Multiple Selection?</Label>
+    <View class="viewBacker">
+
+      <View id="answers" class="viewUI">
+        <Label class="header">ANSWERS</Label>
+
+        <View top="15" width="100%" layout="horizontal">
+          <Label left="10">Multiple Selection</Label>
+          <Switch left="10" value="false"></Switch>
+        </View>
+
       </View>
 
     </View>

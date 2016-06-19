@@ -11,8 +11,8 @@ var demoAgeIndex = 0;
 var demoGenderIndex = 0;
 var rewardsTypeIndex = 0;
 
-var campaignVO = new CampaignsModel().setter();
-Ti.API.info('vo', campaignVO.getter());
+var campaignVO = new CampaignsModel();//.setter();
+Ti.API.info('vo', campaignVO);//.getter());
 
 //new ViewHelper().hideElement($.addBeacons);
 
@@ -31,12 +31,12 @@ function postLayoutHandler(e)
 function init()
 {
   Ti.API.info('init!');
-  // if (campaignVO.engagementType === "beacons")
+  // if (campaignVO.engagement.type === "beacons")
   // {
   //   Ti.API.info('beacons...');
-  //   if (campaignVO.beacons.length === 0)
+  //   if (campaignVO.engagement.beacons.length === 0)
   //   {
-  //     //campaignVO.beacons.push("Tap to add...");
+  //     //campaignVO.engagement.beacons.push("Tap to add...");
   //     //updateBeaconCloud();
   //   }
   // }
@@ -48,7 +48,7 @@ function engagementSubviewsManager()
 {
   var view = new ViewHelper();
 
-  switch(campaignVO.engagementType)
+  switch(campaignVO.engagement.type)
   {
     case "beacons":
       view.hideElement($.methodRanked);
@@ -70,10 +70,10 @@ function engagementSubviewsManager()
 
 function rewardsSubviewsManager()
 {
-  Ti.API.info('rewardsSubviewsManager', campaignVO.rewardsType);
+  Ti.API.info('rewardsSubviewsManager', campaignVO.reward.type);
   var view = new ViewHelper();
 
-  switch(campaignVO.rewardsType)
+  switch(campaignVO.reward.type)
   {
     case "none":
       view.hideElement($.rewardsCouponView);
@@ -94,14 +94,14 @@ function rewardsSubviewsManager()
 
 function addBeacons()
 {
-  new ModalBeaconsComponent().createComponent("campaign", campaignVO.beacons, beaconsAddedHandler);
+  new ModalBeaconsComponent().createComponent("campaign", campaignVO.engagement.beacons, beaconsAddedHandler);
 }
 
 function beaconsAddedHandler(beacons)
 {
   Ti.API.info('beaconsAddedHandler', beacons);
 
-  campaignVO.beacons = beacons;
+  campaignVO.engagement.beacons = beacons;
   updateBeaconCloud();
 }
 
@@ -113,62 +113,62 @@ function rankedChangeHandler(e)
   switch(e.source.id)
   {
     case "bronzeButton":
-      if (_.contains(campaignVO.targetRanks, "bronze"))
+      if (_.contains(campaignVO.engagement.ranks, "bronze"))
       {
-        index = _.indexOf(campaignVO.targetRanks, "bronze");
-        campaignVO.targetRanks.splice(index, 1);
+        index = _.indexOf(campaignVO.engagement.ranks, "bronze");
+        campaignVO.engagement.ranks.splice(index, 1);
         e.source.backgroundColor = "#eef7fa";
       }
       else
       {
-        campaignVO.targetRanks.push("bronze");
+        campaignVO.engagement.ranks.push("bronze");
         e.source.backgroundColor = "#cd7f32";
       }
     break;
 
     case "silverButton":
-      if (_.contains(campaignVO.targetRanks, "silver"))
+      if (_.contains(campaignVO.engagement.ranks, "silver"))
       {
-        index = _.indexOf(campaignVO.targetRanks, "silver");
-        campaignVO.targetRanks.splice(index, 1);
+        index = _.indexOf(campaignVO.engagement.ranks, "silver");
+        campaignVO.engagement.ranks.splice(index, 1);
         e.source.backgroundColor = "#eef7fa";
       }
       else
       {
-        campaignVO.targetRanks.push("silver");
+        campaignVO.engagement.ranks.push("silver");
         e.source.backgroundColor = "#C9D1D3";
       }
     break;
 
     case "goldButton":
-      if (_.contains(campaignVO.targetRanks, "gold"))
+      if (_.contains(campaignVO.engagement.ranks, "gold"))
       {
-        index = _.indexOf(campaignVO.targetRanks, "gold");
-        campaignVO.targetRanks.splice(index, 1);
+        index = _.indexOf(campaignVO.engagement.ranks, "gold");
+        campaignVO.engagement.ranks.splice(index, 1);
         e.source.backgroundColor = "#eef7fa";
       }
       else
       {
-        campaignVO.targetRanks.push("gold");
+        campaignVO.engagement.ranks.push("gold");
         e.source.backgroundColor = "#EEBC1D";
       }
     break;
 
     case "obsidianButton":
-    if (_.contains(campaignVO.targetRanks, "obsidian"))
+    if (_.contains(campaignVO.engagement.ranks, "obsidian"))
     {
-      index = _.indexOf(campaignVO.targetRanks, "obsidian");
-      campaignVO.targetRanks.splice(index, 1);
+      index = _.indexOf(campaignVO.engagement.ranks, "obsidian");
+      campaignVO.engagement.ranks.splice(index, 1);
       e.source.backgroundColor = "#eef7fa";
     }
     else
     {
-      campaignVO.targetRanks.push("obsidian");
+      campaignVO.engagement.ranks.push("obsidian");
       e.source.backgroundColor = "#000033";
     }
     break;
   }
-  Ti.API.info('ranks', campaignVO.targetRanks);
+  Ti.API.info('ranks', campaignVO.engagement.ranks);
 }
 
 function changeAudienceHandler(e)
@@ -192,7 +192,7 @@ function audienceSelectedHandler(e)
   $.audienceMethod.title = e.title;
   engagementMethodIndex = e.index;
   // update vo
-  campaignVO.engagementType = e.value;
+  campaignVO.engagement.type = e.value;
   Ti.API.info('vo',campaignVO);
 
   if (e.value === "beacons")
@@ -205,9 +205,9 @@ function audienceSelectedHandler(e)
 
 function updateBeaconCloud()
 {
-  Ti.API.info('updating beacon cloud', campaignVO.beacons);
+  Ti.API.info('updating beacon cloud', campaignVO.engagement.beacons);
 
-  if (campaignVO.beacons.length > 0)
+  if (campaignVO.engagement.beacons.length > 0)
   {
     // hide tapBeaconsButton
     //$.tapBeaconsButton.hide();
@@ -226,7 +226,7 @@ function updateBeaconCloud()
 
   // add new items
   var label;
-  _.each(campaignVO.beacons, function(beacon)
+  _.each(campaignVO.engagement.beacons, function(beacon)
   {
     label = $.UI.create('TextField', {value:beacon.name, classes:["beaconCloudItem"]});
     $.beaconTags.add(label);
@@ -282,7 +282,7 @@ function demoGenderSelectedHandler(e)
   demoGenderIndex = e.index;
 
   // update vo
-  //campaignVO.engagementType = e.value;
+  //campaignVO.engagement.type = e.value;
 }
 
 function demoAgeSelectedHandler(e)
@@ -291,7 +291,7 @@ function demoAgeSelectedHandler(e)
   demoAgeIndex = e.index;
 
   // update vo
-  //campaignVO.engagementType = e.value;
+  //campaignVO.engagement.type = e.value;
 }
 
 function changeRewardsTypeHandler(e)
@@ -313,7 +313,7 @@ function rewardsTypeSelectedHandler(e)
   rewardsTypeIndex = e.index;
 
   // update vo
-  campaignVO.rewardsType = e.value;
+  campaignVO.reward.type = e.value;
 
   // update subviews
   rewardsSubviewsManager();

@@ -3,7 +3,7 @@
 
     <View id="mainView" layout="vertical" top="0" bottom="0" width="100%" backgroundColor="white">
 
-      <View id="profile" layout="horizontal" width="100%" top="0" height="Ti.UI.SIZE" backgroundColor="#d7daff">
+      <View id="profile" layout="horizontal" width="100%" top="0" height="Ti.UI.SIZE" backgroundImage="/images/bgDefault.jpg">
 
         <!-- User Pic -->
         <View top="10" left="10" width="Ti.UI.SIZE" height="Ti.UI.SIZE" layout="vertical">
@@ -15,13 +15,13 @@
         <!-- Top Bar -->
         <View left="20" top="10" layout="vertical" width="Ti.UI.SIZE" height="Ti.UI.SIZE" >
           <!-- Display Name -->
-          <Label id="displayName" width="100%" color="black" ellipsize="true" wordWrap="false"></Label>
+          <Label id="displayName" width="100%" color="white" ellipsize="true" wordWrap="false"></Label>
           <!-- Username -->
-          <Label id="username" top="5" width="100%" color="#777777" wordWrap="false" horizontalWrap="false" lines="1" maxLines="1" ellipsize="true" text="@celehoa"></Label>
+          <Label id="username" top="5" width="100%" color="white" wordWrap="false" horizontalWrap="false" lines="1" maxLines="1" ellipsize="true" text="@celehoa"></Label>
           <!-- Location -->
-          <Label id="location" top="5" width="100%" color="#777777" wordWrap="false" horizontalWrap="false" lines="1" maxLines="1" ellipsize="true" text="Los Angeles, CA"></Label>
+          <Label id="location" top="5" width="100%" color="white" wordWrap="false" horizontalWrap="false" lines="1" maxLines="1" ellipsize="true" text="Los Angeles, CA"></Label>
           <!-- Link -->
-          <Label id="link" top="5" width="100%" color="blue" wordWrap="false" horizontalWrap="false" lines="1" maxLines="1" ellipsize="true" text="http://www.myhomepage.com"></Label>
+          <Label id="link" top="5" width="100%" color="#03a9f4" wordWrap="false" horizontalWrap="false" lines="1" maxLines="1" ellipsize="true" text="http://www.myhomepage.com"></Label>
           <!-- Spacer -->
           <View id="spacer" height="20"></View>
         </View>

@@ -23,7 +23,7 @@ function postLayoutHandler(e)
     {
       $.joinButton.title = "UNJOIN";
       $.joinButton.backgroundColor = "red";
-      $.ranks.title = "My Rank";
+      $.ranks.title = "Your Rank";
     }
 
     getCampaigns();

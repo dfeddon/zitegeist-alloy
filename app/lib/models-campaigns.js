@@ -1,13 +1,19 @@
 //var LoginResultVO = require("platform-titanium/core/models/loginresult.model");
+var RewardsModel = require("models.rewards");
+var CampaignEngagementsModel = require("models.campaignEngagements");
 
 function Campaign()
 {
     Ti.API.info("Campaign constructor");
     this.name = undefined;
     this.teaser = undefined;
-    this.engagementType = "beacons";
-    this.rewardsType = "none";
-    this.targetRanks = [];
+    this.reward = new RewardsModel();
+
+    //this.engagementType = "beacons";
+    //this.targetRanks = [];
+    //this.beacons = [];
+    this.engagement = new CampaignEngagementsModel();
+
     this.featuredType = 0;
     this.sample = 0;
     this.isActive = false;
@@ -19,8 +25,9 @@ function Campaign()
     this.schedule = undefined;
     this.reports = [];
     this.metrics = [];
-    this.beacons = [];
     this.userPermissions = [];
+
+    return this.getter();
 }
 
 Campaign.prototype.setter = function(obj)
