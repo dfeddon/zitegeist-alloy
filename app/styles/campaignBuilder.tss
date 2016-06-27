@@ -17,7 +17,7 @@
 }
 "TextArea":
 {
-  font: {fontSize: 18, fontFamily: "SFUIDisplay-Light"},
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
   //backgroundColor: "black",
   color: "white",
   paddingLeft: 5,

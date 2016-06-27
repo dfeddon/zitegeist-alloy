@@ -273,7 +273,7 @@ function navChangeEvent(e)
       break;
 
       case "createCampaign":
-        $.headerText.text = "CAMPAIGN BUILDER";
+        $.headerText.text = "CAMPAIGN DESIGNER";
         $.menuButton.hide(); //new ViewHelper().hideElement($.menuButton);
         $.backButton.show(); //new ViewHelper().showElement($.backButton);
         $.createCampaignButton.hide(); //new ViewHelper().hideElement($.createCampaignButton);

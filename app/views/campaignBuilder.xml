@@ -1,5 +1,5 @@
 <Alloy>
-  <ScrollView id="scrollView" layout="vertical" left="0" right="0" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" top="0" bottom="0" onPostlayout="postLayoutHandler">
+  <ScrollView id="scrollView" layout="vertical" left="0" right="0" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" top="0" bottom="40" onPostlayout="postLayoutHandler">
 
   <!-- <View top="10" left="15" right="15" height="Ti.UI.SIZE" backgroundColor="transparent" onPostlayout="postLayoutHandler"> -->
 
@@ -88,9 +88,9 @@
         <Label class="creditcosts" left="10">5000 credits</Label>
       </View>
 
-      <View id="privatize" top="10" left="10" right="15" layout="horizontal" height="Ti.UI.SIZE" isAdvanced="true">
+      <View id="privatize" top="10" width="100%" layout="horizontal" height="Ti.UI.SIZE">
         <Label left="10" width="120">Privatize Results</Label>
-        <Switch left="0" value="false"></Switch>
+        <Switch left="10" value="false"></Switch>
         <Label class="creditcosts" left="10">1000 credits</Label>
       </View>
     </View>

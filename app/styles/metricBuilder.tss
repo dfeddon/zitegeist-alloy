@@ -1,6 +1,8 @@
 "Button":
 {
-  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"}
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  color: "black",
+  backgroundColor:"#eef7fa"
 }
 "Label":
 {
@@ -11,6 +13,14 @@
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
   //backgroundColor: "white",
+  paddingLeft: 5,
+  paddingRight: 5
+}
+"TextArea":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
+  //backgroundColor: "black",
+  color: "black",
   paddingLeft: 5,
   paddingRight: 5
 }
@@ -51,4 +61,9 @@
   height: 40,
   backgroundColor: "#2C3E50",
   color: "white"
+}
+".buttonTap":
+{
+  font: {fontSize: 14, fontFamily: "SFUIDisplay-Medium"},
+  color: "#2d2f2f"
 }

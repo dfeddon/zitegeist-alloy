@@ -14,7 +14,7 @@
 
 				<!-- mid -->
 				<View id="navMid" width="33%">
-					<Label id="headerText" top="10" left="30%" text="Campaigns" color="white"></Label>
+					<Label id="headerText" top="10" text="Campaigns" width="Ti.UI.SIZE" color="white"></Label>
 				</View>
 
 				<!-- right -->
