@@ -40,8 +40,10 @@
       </dict>
     </plist>
   </ios>
-  <android
-    xmlns:android="http://schemas.android.com/apk/res/android">
+  <android xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest>
+      <application android:theme="@style/Theme.AppCompat.NoTitleBar"/>
+    </manifest>
   </android>
   <mobileweb>
     <precache></precache>
@@ -56,14 +58,14 @@
   </modules>
   <deployment-targets>
     <target device="android">true</target>
-    <target device="ipad">true</target>
+    <target device="ipad">false</target>
     <target device="iphone">true</target>
-    <target device="mobileweb">true</target>
-    <target device="windows">true</target>
+    <target device="mobileweb">false</target>
+    <target device="windows">false</target>
   </deployment-targets>
-  <sdk-version>5.2.2.GA</sdk-version>
+  <sdk-version>7.1.0.GA</sdk-version>
   <plugins>
-    <plugin version="1.9.0">ti.alloy</plugin>
+    <plugin version="1.11.0">ti.alloy</plugin>
   </plugins>
   <property name="appc-app-id" type="string">571f7f752ab5d3ef30845f48</property>
   <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>

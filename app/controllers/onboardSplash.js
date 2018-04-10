@@ -6,9 +6,9 @@ var beacon = require("models-beacons");
 
 function signin(e)
 {
-  Ti.API.info('sign in...');
+  Ti.API.info('sign in...', $.container);
 
-  $.container.fireEvent("navChangeEvent", {from:"onboardSplash", to:"signin"});
+  $.container.fireEvent("navChangeEvent", {from:"onboardSplash", to:"signin", bubbles: true});
 }
 
 function register(e)

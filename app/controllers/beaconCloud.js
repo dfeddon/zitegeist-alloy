@@ -10,7 +10,7 @@ function viewLayoutHandler(e)
   Ti.API.info('beaconCloud layout!');
   if (firstLoad === false)
   {
-    $.view.fireEvent("beaconCloudCreated", {addBeaconToCloud: exports.addBeaconToCloud});
+    $.view.fireEvent("beaconCloudCreated", {addBeaconToCloud: exports.addBeaconToCloud, bubbles: true});
     firstLoad = true;
   }
 }
@@ -67,7 +67,7 @@ exports.addBeaconToCloud = function(beacon, init)
 
   // dispatch beacon change event
   if (init === false)
-    config.views.index.fireEvent("beaconAddEvent", {beacon: beacon});
+    config.views.index.fireEvent("beaconAddEvent", { beacon: beacon, bubbles: true});
 };
 
 function beaconClickHandler(e)
@@ -76,5 +76,5 @@ function beaconClickHandler(e)
   Ti.API.info('parent', e.source.parent);
 
   // initiate a bottom-based menu to delete the beacon
-  $.view.fireEvent("beaconClickEvent", {name:e.source.value, view:e.source.parent});
+  $.view.fireEvent("beaconClickEvent", { name: e.source.value, view: e.source.parent, bubbles: true});
 }

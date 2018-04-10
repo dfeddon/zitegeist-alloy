@@ -166,17 +166,17 @@ function zeitgeistClickHandler(e)
 
 function getZScore()
 {
-  $.contentWrapper.fireEvent("myProfileViewChange", {view:"myProfileZScore"});
+  $.contentWrapper.fireEvent("myProfileViewChange", { view: "myProfileZScore", bubbles: true});
 }
 
 function getRanks()
 {
-  $.contentWrapper.fireEvent("myProfileViewChange", {view:"myProfileRanks"});
+  $.contentWrapper.fireEvent("myProfileViewChange", { view: "myProfileRanks", bubbles: true});
 }
 
 function getCampaigns()
 {
-  $.contentWrapper.fireEvent("myProfileViewChange", {view:"campaignStreams"});
+  $.contentWrapper.fireEvent("myProfileViewChange", { view: "campaignStreams", bubbles: true});
 }
 
 function getUserBeacons()
@@ -196,7 +196,7 @@ function getUserBeacons()
       beaconsArray.push(item.beacon);
     });
 
-    $.contentWrapper.fireEvent("myProfileViewChange", {view:"beaconsTextField", beacons: beaconsArray});
+    $.contentWrapper.fireEvent("myProfileViewChange", { view: "beaconsTextField", beacons: beaconsArray, bubbles: true});
   });
 
   // new ApiService().api("get", "users/beacons/" + user._id, {}, function(err, jsonResponse)

@@ -9,7 +9,7 @@ function postLayoutHandler(e)
   if (firstRun === false)
   {
     Ti.API.info('firing created handler');
-    $.container.fireEvent("campaignListCreated", {tableView: $.tableView, view:this});
+    $.container.fireEvent("campaignListCreated", { tableView: $.tableView, view: this, bubbles: true});
     firstRun = true;
   }
 }

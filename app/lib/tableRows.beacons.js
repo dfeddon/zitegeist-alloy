@@ -96,7 +96,7 @@ TableRowBeacons.prototype.createRow = function()
       {
         // add beacon
         Ti.API.info('add beacon confirmed', e.index);
-        tableViewRow.fireEvent("beaconAddEvent", {beacon: tableViewRow.data, index: e.index});
+        tableViewRow.fireEvent("beaconAddEvent", { beacon: tableViewRow.data, index: e.index, bubbles: true});
       }
       else
       {

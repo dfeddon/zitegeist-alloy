@@ -20,7 +20,7 @@ function openHandler(e)
     if (Ti.App.Properties.getString('isRegistered') === "true")
     {
         Ti.API.info('login...');
-        $.contentWrapper.fireEvent("navChangeEvent", {from:null, to:"signin"});
+      $.contentWrapper.fireEvent("navChangeEvent", { from: null, to: "signin", bubbles: true});
     }
     else
     {
@@ -156,7 +156,7 @@ function beaconClickHandler(e)
 }
 function navChangeEvent(e)
 {
-    Ti.API.info('nav changed', e);
+    Ti.API.info('nav changed', (config.isDroid) ? JSON.stringify(e) : e);
 
     if (viewTo == e.to)
     {
@@ -199,7 +199,7 @@ function navChangeEvent(e)
       // add new view to wrapper
       $.contentWrapper.add(currentView);
     }
-    else if (e.fromModal === true)
+    else if (e.fromModal === true && config.isIos)
     {
       // just hide modal
       $.contentModal.remove($.contentModal.children[0].getView);

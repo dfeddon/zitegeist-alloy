@@ -99,8 +99,9 @@ function metricItemSelectedHandler(e)
   }
   else
   {
-    Ti.API.info('select style');
+    Ti.API.info('select style', typeof(e.row), e.row);
     $.removeClass(e.row, e.row.classes[0]);
+    Ti.API.info('class removed, now adding...');
     $.addClass(e.row, "rowStyleSelected");
     //$.addClass(e.row.getView("rowIndex", "rowStyleSelected");
     //Ti.API.info('classname', e.row.classes);

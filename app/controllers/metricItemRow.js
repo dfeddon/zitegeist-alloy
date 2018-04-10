@@ -8,7 +8,7 @@ Ti.API.info('value', $.args.value);
 function touchEndHandler(e)
 {
   //Ti.API.info('clicked', e, $.args);
-  $.container.fireEvent("metricItemSelected", {e:e, args:$.args});
+  $.container.fireEvent("metricItemSelected", { e: e, args: $.args, bubbles: true});
 }
 exports.getLabel = function()
 {

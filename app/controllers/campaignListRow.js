@@ -11,7 +11,7 @@ function clickHandler(e)
 
   e.cancelBubble = true;
 
-  $.container.fireEvent("navChangeEvent", {from:"campaignList", to:"surveyView", fromModal:false, toModal:true, data:$.args});
+  $.container.fireEvent("navChangeEvent", { from: "campaignList", to: "surveyView", fromModal: false, toModal: true, data: $.args, bubbles: true});
 
 }
 
@@ -24,5 +24,5 @@ function profileClickHandler(e)
 
   Ti.API.info('user profile', $.args.brand);
 
-  $.container.fireEvent("navChangeEvent", {from:"campaignList", to:"userProfile", fromModal:false, toModal:true, data:$.args.brand});
+  $.container.fireEvent("navChangeEvent", { from: "campaignList", to: "userProfile", fromModal: false, toModal: true, data: $.args.brand, bubbles: true});
 }

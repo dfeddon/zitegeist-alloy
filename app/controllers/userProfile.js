@@ -108,15 +108,15 @@ function fameClickHandler(e)
 
 function getFame()
 {
-  $.contentWrapper.fireEvent("myProfileViewChange", {view:"userProfileFame"});
+  $.contentWrapper.fireEvent("myProfileViewChange", { view: "userProfileFame", bubbles: true});
 }
 
 function getRanks()
 {
-  $.contentWrapper.fireEvent("myProfileViewChange", {view:"userProfileRanks"});
+  $.contentWrapper.fireEvent("myProfileViewChange", { view: "userProfileRanks", bubbles: true});
 }
 
 function getCampaigns()
 {
-  $.contentWrapper.fireEvent("myProfileViewChange", {view:"campaignStreams"});
+  $.contentWrapper.fireEvent("myProfileViewChange", { view: "campaignStreams", bubbles: true});
 }

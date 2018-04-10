@@ -55,7 +55,7 @@ ApiService.prototype.api = function(method, route, data, callback)
     Ti.API.info("api", config.endpoint);
     Ti.API.info(method);
     Ti.API.info(route);
-    Ti.API.info(data);
+    Ti.API.info(JSON.stringify(data));
 
     // force-encrypt all but authentication routes (exception is insertion of binary files)
     var split = route.split("/");
@@ -253,6 +253,7 @@ ApiService.prototype.api = function(method, route, data, callback)
     }
     else
     {
+        Ti.API.info("= data:", JSON.stringify(data));
         xhr.send(data);
     }
 };

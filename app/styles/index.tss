@@ -21,6 +21,14 @@
 {
   backgroundColor: "#2b5e93"
 }
+ "#backButton[platform=android]":
+ {
+   width: 20, 
+   height: 20, 
+   left: 15,
+   backgroundColor: "transparent",
+   image: "/images/survey-nav-back.png"
+ }
 "#footerBar":
 {
   backgroundColor: "#2b5e93"

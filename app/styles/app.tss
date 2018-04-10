@@ -11,7 +11,7 @@ For example, the following would apply to all labels, windows,
 and text fields (depending on platform) in your app unless you
 overrode the settings with other TSS, XML, or JS settings:
 
-'Label[platform=android,windows]': {
+'Label[platform=android]': {
 	color: '#000' // all platforms except Android and Windows default to black
 }
 
@@ -29,6 +29,10 @@ overrode the settings with other TSS, XML, or JS settings:
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
   color: "yellow"
+}
+"Button[platform=android]":
+{
+  backgroundColor: "transparent"
 }
 "Label":
 {

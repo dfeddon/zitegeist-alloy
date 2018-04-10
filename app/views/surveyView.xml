@@ -30,7 +30,7 @@
     </View>
 
     <View id="metricsView" layout="vertical" top="0" left="0" right="0" width="100%" bottom="0" onPostlayout="tableViewCreated">
-      <TableView id="tableView" width="100%" height="Ti.UI.FILL" backgroundColor="transparent" separatorStyle="Ti.UI.iPhone.ListViewSeparatorStyle.NONE" bubbleParent="true">
+      <TableView id="tableView" width="100%" height="Ti.UI.FILL" backgroundColor="transparent" separatorStyle="Titanium.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE" bubbleParent="true">
       </TableView>
     </View>
 

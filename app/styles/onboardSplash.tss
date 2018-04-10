@@ -10,6 +10,7 @@
 {
   font: {fontSize: 14, fontFamily: "SFUIDisplay-Light"},
   backgroundColor: "white",
+  color: "#000",
   paddingLeft: 5,
   paddingRight: 5
 }

@@ -29,7 +29,8 @@ config.platform.version = Ti.Platform.version;
 if (config.platform.name == "android")
 {
     config.isDroid = true;
-    config.isIos = false;
+	config.isIos = false;
+	config.endpoint = "http://10.0.2.2:1337";
     config.deviceHeight = parseInt(Ti.Platform.displayCaps.platformHeight  / (Ti.Platform.displayCaps.logicalDensityFactor || 1), 10);
     config.deviceWidth = parseInt(Ti.Platform.displayCaps.platformWidth  / (Ti.Platform.displayCaps.logicalDensityFactor || 1), 10);
 }

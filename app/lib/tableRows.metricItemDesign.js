@@ -52,7 +52,7 @@ MetricItemDesigner.prototype.createRow = function()
     {
       Ti.API.info('textchanged', text);
       labelText.text = text;
-      tableViewRow.fireEvent("rowChangeEvent", {row:tableViewRow});
+      tableViewRow.fireEvent("rowChangeEvent", { row: tableViewRow, bubbles: true});
     });
   }
 

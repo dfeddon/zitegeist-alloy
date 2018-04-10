@@ -1,0 +1,10 @@
+{
+	"name": "zeitgeist-alloy",
+	"version": "0.0.1",
+	"description": "The Consensus Engine",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "clear && appc run -p android --skip-js-minify",
+		"server": "node ../zitegeist-node/server.js"
+	}
+}

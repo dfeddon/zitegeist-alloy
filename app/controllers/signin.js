@@ -6,7 +6,7 @@ var UserHelper = require("helpers-users");
 function register(e)
 {
   Ti.API.info('register...');
-  $.container.fireEvent("navChangeEvent", {from:"signin", to:"onboardSplash"});
+  $.container.fireEvent("navChangeEvent", { from: "signin", to: "onboardSplash", bubbles: true});
 }
 
 function doSignin(e)
@@ -83,7 +83,7 @@ function getUserByLogin()
           // store results
           config.userFollowing = jsonResponse;
           // now, go to campaign stream
-          $.container.fireEvent("navChangeEvent", {from:"signin", to:"campaignStreams", beacons: jsonResponse.beacons});
+          $.container.fireEvent("navChangeEvent", {from:"signin", to:"campaignStreams", beacons: jsonResponse.beacons, bubbles: true});
           // dispatch user beacons
           // search for messages
         }
@@ -125,7 +125,7 @@ function getUserById(id)
               // store results
               config.userFollowing = jsonResponse;
               // now, go to campaign stream
-              $.container.fireEvent("navChangeEvent", {from:"signin", to:"campaignStreams", beacons: jsonResponse.beacons});
+              $.container.fireEvent("navChangeEvent", { from: "signin", to: "campaignStreams", beacons: jsonResponse.beacons, bubbles: true});
               // dispatch user beacons
               // search for messages
             }
